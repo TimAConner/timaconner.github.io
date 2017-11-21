@@ -6,8 +6,21 @@
 /*****************
 Element Selectors
 *****************/
-header h2 {
+header h2,
+main h1 {
     text-align: center;
+    margin: 1em 0;
+}
+
+main h1 {
+    background-color: lightgray;
+    padding: 0.5em 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 1em;
+    background-color: lightgray;
 }
 
 
@@ -15,13 +28,21 @@ header h2 {
 Class Selectors
 *****************/
 
+body {
+    background-color: #fcfcfc;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 90%;
+}
+
+
 /*
  Main Menu 
 */
 
 .menu {
-    /* display: flex; */
-    /* justify-content: center; */
     list-style: none;
     padding-left: 0;
 }
@@ -44,3 +65,43 @@ Class Selectors
     color: black;
     background-color: lightskyblue;
 }
+
+
+/*
+Blog
+*/
+.card {
+    margin-bottom: 1em;
+}
+.card h4, 
+.card h5 {
+    text-align: center;
+}
+.card:not(:last-of-type) {
+    padding-bottom: 1em;
+    border-bottom: 1px dotted black;
+}
+
+/*****************
+Media Queries
+*****************/
+
+@media (min-width: 600px){
+    .menu {
+        display: flex;
+        justify-content: center;
+    }
+    .menu li {
+        margin-right: 1em;
+    }
+    .flex {
+        display: flex;
+    }
+    .card {
+        border: 1px dashed lightgray !important;
+        margin-right: 5px;
+        padding: 1em;
+    }
+    
+}
+

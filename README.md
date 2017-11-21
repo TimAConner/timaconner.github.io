@@ -1,3 +1,5 @@
 # timaconner.github.io
 
-This is my personal site made while at NSS.
+##Synopsis
+##Motivation
+This is a personal site made while at NSS.

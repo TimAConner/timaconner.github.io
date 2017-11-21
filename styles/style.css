@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*****************
+Element Selectors
+*****************/
+header h2 {
+    text-align: center;
+}
+
+
+/*****************
+Class Selectors
+*****************/
+
+/*
+ Main Menu 
+*/
+
+.menu {
+    /* display: flex; */
+    /* justify-content: center; */
+    list-style: none;
+    padding-left: 0;
+}
+
+.menu li {
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin-bottom: 1em;
+}
+.menu a {
+    display: inline-block;
+    width: 100%;
+    padding: 1em;
+    text-decoration: none;
+    border-radius: 20px;
+}
+.menu a:hover {
+    border-radius: 20px;
+    color: black;
+    background-color: lightskyblue;
+}

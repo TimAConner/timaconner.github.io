@@ -168,11 +168,25 @@ function createBlogCards() {
     let outputHTML = "";
 
     for(let i = 0; i < blogs.length; i++){
-        outputHTML += '<section class="card">';
-        outputHTML += '<h4>' + blogs[i].title + '</h4>';
-        outputHTML += '<h5>' + blogs[i].date + '</h5>';
-        outputHTML += '<p>' + blogs[i].content + '</p>';
-        outputHTML += '</section>';   
+        let section = document.createElement("section");
+        section.setAttribute("class", "card");
+
+        let h4 = document.createElement("h4");
+        let h4Text = document.createTextNode(blogs[i].title);
+        h4.appendChild(h4Text);
+        section.appendChild(h4);
+
+        let h5 = document.createElement("h5");
+        let h5Text = document.createTextNode(blogs[i].date);
+        h5.appendChild(h5Text);
+        section.appendChild(h5);
+        
+        let p = document.createElement("p");
+        let h5Text = document.createTextNode(blogs[i].content );
+        p.appendChild(pText);
+        section.appendChild(p);
+
+        outputHTML.appendChild(section);
     }
 
     document.getElementById("blog-output").innerHTML = outputHTML;

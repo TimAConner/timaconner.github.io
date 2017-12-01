@@ -94,6 +94,11 @@ Media Queries
     .menu li {
         margin-right: 1em;
     }
+
+    /********
+    Blog
+    *********/
+    
     .flex {
         display: flex;
         flex-wrap: wrap;
@@ -103,6 +108,9 @@ Media Queries
         margin-right: 5px;
         padding: 2em;
     }
-    
+
+    article section {
+        
+    }
 }
 

@@ -182,14 +182,13 @@ function createBlogCards() {
         section.appendChild(h5);
         
         let p = document.createElement("p");
-        let h5Text = document.createTextNode(blogs[i].content );
+        let pText = document.createTextNode(blogs[i].content );
         p.appendChild(pText);
         section.appendChild(p);
 
-        outputHTML.appendChild(section);
+        document.getElementById("blog-output").insertAdjacentElement('afterend', section);
     }
 
-    document.getElementById("blog-output").innerHTML = outputHTML;
 }
 
 createBlogCards();

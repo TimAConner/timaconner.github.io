@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*****************
+Element Selectors
+*****************/
+header h2,
+main h1 {
+    text-align: center;
+    margin: 1em 0;
+}
+
+main h1 {
+    background-color: lightgray;
+    padding: 0.5em 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 1em;
+    background-color: lightgray;
+}
+
+
+/*****************
+Class Selectors
+*****************/
+
+body {
+    background-color: #F4F4F4;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 90%;
+}
+
+
+/*
+ Main Menu 
+*/
+
+.menu {
+    list-style: none;
+    padding-left: 0;
+}
+
+.menu li {
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin-bottom: 1em;
+}
+.menu a {
+    display: inline-block;
+    width: 100%;
+    padding: 1em;
+    text-decoration: none;
+    border-radius: 20px;
+}
+.menu a:hover {
+    border-radius: 20px;
+    color: black;
+    background-color: lightskyblue;
+}
+
+
+/*
+Blog
+*/
+.card {
+    margin-bottom: 1em;
+}
+.card h4, 
+.card h5,
+.card h6 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.card h5 {
+    margin-top: 1em;
+}
+.card:not(:last-of-type) {
+    padding-bottom: 1em;
+    border-bottom: 1px dotted black;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.code {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #d3d3d36b;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+/*****************
+Media Queries
+*****************/
+
+@media (min-width: 600px){
+    .menu {
+        display: flex;
+        justify-content: center;
+    }
+    .menu li {
+        margin-right: 1em;
+    }
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card {
+        border: 3px dashed #ffffff !important;
+        margin-right: 5px;
+        padding: 2em;
+    }
+    
+}
+

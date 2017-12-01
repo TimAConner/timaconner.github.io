@@ -149,17 +149,30 @@ console.log("a",  this['a']);//Undefined
 ];
 
 function createBlogCards() {
-    let outputHTML = "";
+    let output = document.getElementById("blog-output");
 
     for(let i = 0; i < blogs.length; i++){
-        outputHTML += `<section class="card">`;
-        outputHTML += `<h4>${blogs[i].title}</h4>`;
-        outputHTML += `<h5>${blogs[i].date}</h5>`;
-        outputHTML += `<p>${blogs[i].content}</p>`;
-        outputHTML += `</section>`;
-    }
+        let section = document.createElement("section");
+        section.setAttribute("class", "card");
+        
+        section.appendChild(createElement("h4", blogs[i].title));
+        section.appendChild(createElement("h5", blogs[i].date));
+        section.appendChild(createElement("div", blogs[i].content, true));
 
-    document.getElementById("blog-output").innerHTML = outputHTML;
+        output.appendChild(section);
+    }
 }
 
 createBlogCards();
+
+function createElement(element, text, innerHTML = false){
+    let domElement = document.createElement(element);
+    let textNode;
+    if(innerHTML === true){
+        domElement.innerHTML = text;
+    } else {
+        textNode = document.createTextNode(text);
+        domElement.appendChild(textNode);
+    }
+    return domElement;
+}

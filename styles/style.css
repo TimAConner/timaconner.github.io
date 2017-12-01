@@ -96,11 +96,12 @@ Media Queries
     }
     .flex {
         display: flex;
+        flex-wrap: wrap;
     }
     .card {
         border: 1px dashed lightgray !important;
         margin-right: 5px;
-        padding: 1em;
+        padding: 2em;
     }
     
 }

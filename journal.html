@@ -194,6 +194,62 @@ callFunctions(){
                     </ul>
                 </section>
             </article>
+            <article>
+                <h3>Class: Refactoring Code</h3>
+                <section>
+                    <h5>Best Practices w/ Production Code</h5>
+                    <ul>
+                        <li>Remove commented out code on PR.</li>
+                        <li>Don't include console logs on PR.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h5>Javascript Tip</h5>
+                    <p>.innerHTML wipes the html.  .textContent will modify the text of that HTML, without wiping it and starting new.</p>
+                    <h5>Javascript Dynamic Variables</h5>
+                    <pre>
+let variables = [["x", 5],["y", 3],["z", 1]];
+
+for(let i = 0; i < variables.length; i++){//Creates variables dynamically.
+    this[variables[i][0]] = variables[i][1];
+}
+
+console.log("x", x);//5
+console.log("y", y);//3
+console.log("z", z);//1
+
+let a = 3;
+console.log("a",  this['a']);//Undefined
+
+//let x = 3;  If you run this down here, it says x is undefined above.  Maybe because x is being hoisted here, and then ????
+                    </pre>
+                </section>
+                <section>
+                    <h5>Hotkeys</h5>
+                    <h6>VS Code</h6>
+                    <ul>
+                            <li>ctrl + d = select whole word.</li>
+                            <li>alt + up/down arrows = move line</li>
+                    </ul>
+                    <h6>Google Chrome</h6>
+                    <ul>
+                        <li>ctrl + shift + c = Inspector</li>
+                    </ul>
+                </section>
+                <section>
+                    <h5>Refactoring Code</h5>
+                    <h6>UI Down</h6>
+                    <p>Look at your UI.  How many inputs are there?  That amount will give you the skeleton to how many functions you will need.  Of course, your code will grow and change as you write it, but this can give you a basic idea about what you will need.</p>
+                </section>
+                <section>
+                    <h5>Questions</h5>
+                    <ul>
+                        <li>Javascript: Can there be multiple <i>events</i> happen at the same time?  If event can always be accessed, then how are two events proccessed at the same time?  Is there another way to access events?</li>
+                        <li>HTML: When are custom attributes okay to use?  Seems like putting data in HTML would be bad practice.</li>
+                        <li>CSS: When/how does the browser handle CSS?  If javascript changes css, does it then "rerun" it?</li>s
+                    </ul>
+                </section>
+            </article>
         </section>
     </main>
 </body>

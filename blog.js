@@ -17,21 +17,6 @@
 
 let blogs = [
     {
-        title: "Blog 1",
-        date: "11 November 2017",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-        title: "Blog 2",
-        date: "11 November 2017",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-        title: "Blog 3",
-        date: "11 November 2017",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
         title: "Class Topic: Functions",
         date: "29 November 2017",
         content: `<article>
@@ -49,12 +34,12 @@ let blogs = [
         <section>
             <h4>Arrow Functions</h4>
             <p>These have always confused me when I have seen them.  They are shorthand for anonymous functions and changes what <i>this</i> means in their scope.</p>
-            <code>
+            <pre class="code">
 function(x){
 return x+1;
 } 
 
-is the same as 
+//is the same as 
 
 x => x + 1;
             </pre>
@@ -73,7 +58,7 @@ x => x + 1;
         <section>
             <h4>Random</h4>
             <p>Order functions that will be called in another function before the function that calls them.  This makes it easier to read for someone looking at the code for the first time.</p>
-            <pre>
+            <pre class="code">
 function1(){
 
 }
@@ -103,12 +88,11 @@ function2();
         </section>`
     },
     {
-        title: "Refactoring Functions",
+        title: "Class Topic: Refactoring Functions",
         date: "30 November 2017",
         content: `            <article>
-        <h3>Class: Refactoring Code</h3>
         <section>
-            <h5>Best Practices w/ Production Code</h5>
+            <h5>Best Practices Production Code</h5>
             <ul>
                 <li>Remove commented out code on PR.</li>
                 <li>Don't include console logs on PR.</li>
@@ -118,7 +102,7 @@ function2();
             <h5>Javascript Tip</h5>
             <p>.innerHTML wipes the html.  .textContent will modify the text of that HTML, without wiping it and starting new.</p>
             <h5>Javascript Dynamic Variables</h5>
-            <pre>
+            <pre class="code">
 let variables = [["x", 5],["y", 3],["z", 1]];
 
 for(let i = 0; i < variables.length; i++){//Creates variables dynamically.
@@ -133,7 +117,7 @@ let a = 3;
 console.log("a",  this['a']);//Undefined
 
 //let x = 3;  If you run this down here, it says x is undefined above.  Maybe because x is being hoisted here, and then ????
-            </pre>
+            </pre class="code">
         </section>
         <section>
             <h5>Hotkeys</h5>
@@ -168,25 +152,11 @@ function createBlogCards() {
     let outputHTML = "";
 
     for(let i = 0; i < blogs.length; i++){
-        let section = document.createElement("section");
-        section.setAttribute("class", "card");
-
-        let h4 = document.createElement("h4");
-        let h4Text = document.createTextNode(blogs[i].title);
-        h4.appendChild(h4Text);
-        section.appendChild(h4);
-
-        let h5 = document.createElement("h5");
-        let h5Text = document.createTextNode(blogs[i].date);
-        h5.appendChild(h5Text);
-        section.appendChild(h5);
-        
-        let p = document.createElement("p");
-        let h5Text = document.createTextNode(blogs[i].content );
-        p.appendChild(pText);
-        section.appendChild(p);
-
-        outputHTML.appendChild(section);
+        outputHTML += `<section class="card">`;
+        outputHTML += `<h4>${blogs[i].title}</h4>`;
+        outputHTML += `<h5>${blogs[i].date}</h5>`;
+        outputHTML += `<p>${blogs[i].content}</p>`;
+        outputHTML += `</section>`;
     }
 
     document.getElementById("blog-output").innerHTML = outputHTML;

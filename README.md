@@ -1,6 +1,6 @@
 # timaconner.github.io
 
-##Synopsis 
+## Synopsis 
 This is a personal site made while at NSS.
-##Motivation
+## Motivation
 This site was made to practice HTML, CSS, and Javascript.

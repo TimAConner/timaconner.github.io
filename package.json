@@ -1,0 +1,23 @@
+{
+  "name": "timaconner.github.io",
+  "version": "1.0.0",
+  "description": "This is a personal site made while at NSS.\r ## Motivation\r This site was made to practice HTML, CSS, and Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimAConner/timaconner.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TimAConner/timaconner.github.io/issues"
+  },
+  "homepage": "https://github.com/TimAConner/timaconner.github.io#readme",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  }
+}

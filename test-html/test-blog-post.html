@@ -9,6 +9,82 @@
 <body>
     <article>
         <section>
+            <article>
+                <h4>Chrome Console Logs</h4>
+                <p>Console log outputs the last state of the object, not what the value was when it was called.  If you load JSON with an XHR, and check the value of the XHR object while loading it, the value outputted will be the completed XHR object.</p>
+            </article>
+            <article>
+                <h4>If Statment Assignment</h4>
+                <pre>X is set to one in the first.  Will it then go onto the code inside?  Does x = 1 evaluate as 'true', so it then goes into the code to execute?</pre>
+                <pre> Here's an intersting site I found talking about using this as a utility. <a href='https://www.sitepoint.com/assignment-inside-a-condition/'>Assignment Inside a Condition</a>  It looks like you can test where it exists, and assign it if it does, in the same if stamtent.  It works because the assignment returns a value.  So far in testing, assignment inside a condition evaluates as true unless it is false or undefined.</pre>
+                <pre>
+                    if(x === 1){
+
+                    }
+                    if(x = 1){
+
+                    }
+                    if(x=false){console.log("test");}
+                    // undefined
+                    if(x=true){console.log("test")}
+                    // VM4783:1 test
+
+                    //From the Assignment Inside a Condition 
+                        //btn-create is on the page
+                        if(summary = document.getElementById('btn-create'))
+                        {
+                            console.log(summary);
+                        }
+                        // VM265:3 <button id=​'btn-create'>​Create​</button>​
+                        // undefined
+                        if(summary = document.getElementById('btn-crea'))
+                        {
+                            console.log(summary);
+                        }
+                        // undefined
+
+                    if(false)
+                    {console.log('hey')}
+                    // undefined
+                    if(x = undefined){console.log('hey')}
+                    // undefined
+                </pre>
+            </article>
+            <article>
+                <h4>Alternate If Statment</h4>
+                <p>I use if statments often, but last week I stumbled across a different way off thinking about this.  If, for example, you wanted to check a value and depending on it return a different value, you could use a number of if statments like below.</p>
+                <pre>
+                    let x = 5;
+                    if(x === 5){
+                        console.log("The value is 5.");
+                    } else if(x === 6){
+                        console.log("The value is 6");
+                    }
+                </pre>
+                <p>This works, but it looks ugly, and is hard to deal with.  Here is another to set it up..</p>
+                <pre>
+                    let x = 5;
+                    let values = {
+                        5: "The value is 5.",
+                        6: "The value is 6."
+                    }
+
+                    for(property in values){
+                        if(property === x){
+                            consolelog(values[property]);
+                        }
+                    }
+                </pre>
+            </article>
+            <article>
+                <h4>JS Objects and Module.Exports</h4>
+                <p></p>
+            </article>
+            <article>
+                <h4>Questions: Read 'Expert' JS Programmer's Code to Learn</h4>
+            </article>
+        </section>
+        <section>
             <h5>Javascript Gold</h5>
             
             <p>Another student and a TA were working on a project for a while, and they figured out you can label a for loop (using similar syntax to a Javascript object).  One would be  able to break out of an above loop while in a nested loop.  You can also continue. </p>

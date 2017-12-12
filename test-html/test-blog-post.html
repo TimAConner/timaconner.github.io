@@ -35,7 +35,7 @@
                         {
                             console.log(summary);
                         }
-                        // VM265:3 <button id=​'btn-create'>​Create​</button>​
+                        // VM265:3 <!--<button id=​'btn-create'>​Create​</button>​-->
                         // undefined
                         if(summary = document.getElementById('btn-crea'))
                         {
@@ -77,8 +77,18 @@
                 </pre>
             </article>
             <article>
-                <h4>JS Objects and Module.Exports</h4>
-                <p></p>
+                <h4>Calling functions with strings using Module.Exports</h4>
+                <p>In this NSS <a href='https://github.com/nashville-software-school/front-end-milestones/blob/master/2-single-page-applications/exercises/SP_JS_MODULE_SANDWICH.md'>exercise</a>, they ask you to create a module for different sandiwch toppings (cheese, meat, condiments, etc.)  They want each to have a function that says add{topping} (addCheese(), addMeat(), addCondiments()).  The problem with this, is that I couldn't loop through an array of these objects, because each has a unique function.  At first, I removed the topping name, and just added add() on each module.  Doing this, I could loop through an array, and call add() on each, and the topping would be added to my sandwich.</p>
+                <p>After looking at it for a while, I realized an alternate method.  Because we were creating modules with Browserify, if you want a funciton to be public, you assign ot to the Module.Exports object, like so:
+                </p>
+                <pre>
+                    module.exports = {
+                        addMeat,
+                        addCheese,
+                        addCondiments
+                    };
+                </pre>
+                <p>addMeat, since it has the same name as the function, is shorthand for addMeat: addMeat.  The first value is a string, because this is a Javascript Object.  Meaning, you can reference this function using a string.  Therefore, you can loop over an array of toppings and call the function, if you know the topping name.  Toppings[x][`$add{toppingName}`].</p>
             </article>
             <article>
                 <h4>Questions: Read 'Expert' JS Programmer's Code to Learn</h4>

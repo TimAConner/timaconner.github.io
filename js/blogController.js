@@ -4,9 +4,8 @@ const blogModel = require('./blogModel');
 const blogView = require('./blogView');
 
 module.exports.populateBlog = () => {
-    blogModel.getPosts(createBlog);
+    blogModel.fetchPosts().then(posts => {
+        blogView.createBlogCards(posts);
+    });
 };
 
-const createBlog = (posts) => {
-    blogView.createBlogCards(posts);  
-};

@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports.load = () => {
+module.exports.fetch = () => {
     return new Promise(function (resolve, reject){
         let apiRequest = new XMLHttpRequest();
         apiRequest.addEventListener("load", () => {

@@ -1,21 +1,35 @@
 "use strict";
 
-// Load blog posts into data.
-const loadBlog = (callBackFunction) => {
-    let xhr = new XMLHttpRequest();
-    let data;
-    
-    //Activate on load to populate data with blog posts
-    xhr.addEventListener("load", function() {
-        data = JSON.parse(this.responseText);
-        callBackFunction(data.posts);
-    });
+const apiLoader = require('./apiKeyModel');
 
-    xhr.open("GET", "../json/blog-post.json");
-    xhr.send();
+//https://<DATABASE_NAME>.firebaseio.com/users/ada/name.json?auth=<ID_TOKEN>
+
+// Load blog posts into data.
+const loadBlog = () => {
+ 
 };
 
+
 // Load blog into data and get posts.
-module.exports.getPosts = (callBackFunction) => {
-    return loadBlog(callBackFunction);
+module.exports.fetchPosts = () => {
+    return new Promise(function(resolve, reject) {
+        apiLoader.fetch().then((apiKey) => {
+            new Promise(function(resolve, reject){ 
+                let xhr = new XMLHttpRequest();
+                let data;
+        
+               // let url = `${apiKey.key}/posts.json`;
+                let url = "../json/blog-post.json";
+                //Activate on load to populate data with blog posts
+                xhr.addEventListener("load", function() {
+                    resolve(JSON.parse(this.responseText).posts);
+                });
+            
+                xhr.open("GET", url);
+                xhr.send();
+            }).then(data => {
+                resolve(data);
+            });
+        });
+    }); 
 };

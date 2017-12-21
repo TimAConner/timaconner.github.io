@@ -1,0 +1,16 @@
+{
+    "contacts" : [
+        {
+            "Website" : "LinkedIn",
+            "link" : "https://www.linkedin.com/in/tim-a-conner-7a308392/"
+        }, 
+        {
+            "Website" : "GitHub",
+            "link" : "https://github.com/timaconner"
+        },
+        {
+            "Website" : "Email",
+            "link" : "tim@timaconner.com"
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 "use strict";
 
 // Populate output with blog posts
-module.exports.createBlogCards = (posts) => {
+module.exports.showBlog = (posts) => {
     // Grab div that will be populated
     let output = document.getElementById("blog-output");
 
@@ -35,3 +35,5 @@ const createElement = (element, text, innerHTML = false) => {
     }
     return domElement;
 };
+
+// module.exports

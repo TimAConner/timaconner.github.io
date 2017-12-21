@@ -30,7 +30,7 @@ module.exports = function(grunt){
         },
         browserify: {
             'dist/main.js': ['js/main.js'],
-            'dist/blog.js': ['js/blog.js']
+            'dist/blogController.js': ['js/blogController.js']
         }
     });
 

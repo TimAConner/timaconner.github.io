@@ -2,7 +2,19 @@
     "items": [
         {
             "title" : "Home",
-            "action" : ""
+            "action" : "home.json"
+        },
+        {
+            "title" : "Blog",
+            "action" : "blog-post.json"
+        },
+        {
+            "title" : "Contact",
+            "action" : "contacts.json"
+        },
+        {
+            "title" : "Resume",
+            "action" : "resume.json"
         }
     ]
 }

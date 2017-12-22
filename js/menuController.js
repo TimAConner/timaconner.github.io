@@ -5,7 +5,8 @@ const view = require('./view');
 const pageControllers = {
     "Blog" : require("./blogController"),
     "Home" : require("./homeController"),
-    "Contact" : require("./contactsController")
+    "Contact" : require("./contactsController"),
+    "Resume" : require("./resumeController")
 };
 
 // let navHTML = '<li><a href="index.html">Home</a></li><li><a href="resume.html">Resume</a></li><li><a href="contact.html">Contact</a></li><li><a href="aboutme.html">About Me</a></li><li><a href="projects.html">Projects</a></li><li><a href="blog.html">Blog</a></li>';

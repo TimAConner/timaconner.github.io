@@ -100,3 +100,19 @@ module.exports.showHome = () => {
 </section>`;
 
 };
+
+module.exports.showResume = (jobs) => {
+    let jobsHtml = document.createDocumentFragment();
+
+    for(let i = 0; i < jobs.length; i ++){
+        let article = document.createElement("article");
+        article.setAttribute("class", "job-article");
+        article.appendChild(createElement("h3", jobs[i].company));
+        article.appendChild(createElement("p", jobs[i].title));
+        article.appendChild(createElement("p", jobs[i].dates));
+
+        jobsHtml.appendChild(article);
+    }
+
+    output.appendChild(jobsHtml);
+};

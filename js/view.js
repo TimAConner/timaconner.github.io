@@ -57,6 +57,31 @@ module.exports.showBlog = (posts, totalPosts, postsPerPage) => {
 };
 
 
+module.exports.showProjects = (projects) => {
+        let projectsHtml = document.createDocumentFragment();
+
+        for(let i = 0; i < projects.length; i++){
+            let article = document.createElement("article"),
+            h2 = document.createElement("h2"),
+            a = document.createElement("a"),
+            p = document.createElement("p");
+
+            article.classList.add("project-card");
+
+            a.setAttribute("href", projects[i].link);
+            a.appendChild(document.createTextNode(projects[i].name));
+
+            p.appendChild(document.createTextNode(projects[i].description));
+
+            h2.appendChild(a);
+            article.appendChild(h2);
+            article.appendChild(p);
+
+            projectsHtml.appendChild(article);
+        }
+
+        output.appendChild(projectsHtml);
+    };
 
 
 module.exports.showContacts = (contacts) => {

@@ -19,6 +19,22 @@
     }
 }
 
+.project-card {
+    h2,
+    p {
+        text-align: center;
+    }
+
+    h2 {
+        a {
+            color: $text-color;
+            a:visited {
+                color: $text-color;
+            }
+        }
+    }
+}
+
 body {
     font-family: $body-font;
     background-color: $body-color;

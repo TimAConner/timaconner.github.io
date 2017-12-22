@@ -17,7 +17,7 @@ module.exports.fetchData = (url) => {
                 //let url = "../json/blog-post.json";
                 //Activate on load to populate data with blog posts
                 xhr.addEventListener("load", function() {
-                    resolve(JSON.parse(this.responseText).posts);
+                    resolve(JSON.parse(this.responseText));
                 });
             
                 xhr.open("GET", url);

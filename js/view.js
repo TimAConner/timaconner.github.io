@@ -41,11 +41,38 @@ module.exports.showBlog = (posts) => {
 
 
 module.exports.showContacts = (contacts) => {
-    let output = document.getElementById("contacts-output");
     
-    for(let i = 0; i < contacts.length; i++){
+    let contactsHtml = document.createDocumentFragment();
 
+    for(let i = 0; i < contacts.length; i++){
+        let section = document.createElement("section"),
+        anchor = document.createElement("a");
+        if(contacts[i].svg !==  ""){
+            let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg"),
+            path = document.createElementNS("http://www.w3.org/2000/svg", "path");  
+
+            anchor.setAttribute("href", contacts[i].link);
+
+            svg.setAttribute("viewBox", "0 0 512 512");
+            svg.setAttribute("width", "100");
+            svg.setAttribute("height", "100");
+
+            path.setAttribute("d", contacts[i].svg);
+
+            svg.appendChild(path);
+            anchor.appendChild(svg);
+            section.appendChild(anchor);
+            contactsHtml.appendChild(section);
+        } else {
+            anchor.setAttribute("href", contacts[i].link);
+            anchor.appendChild(createElement("span", contacts[i].Website));          
+            
+            section.appendChild(anchor);
+            contactsHtml.appendChild(section);
+        }
     }
+
+    output.appendChild(contactsHtml);
 };
 
 module.exports.showMenu = (menuItems) => {

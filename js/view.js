@@ -17,7 +17,7 @@ const createElement = (element, text, innerHTML = false) => {
 };
 
 // Populate output with blog posts
-module.exports.showBlog = (posts) => {
+module.exports.showBlog = (posts, totalPosts, postsPerPage) => {
     // Grab div that will be populated
     //Loop through posts and create them
     for(let i = 0; i < posts.length; i++){
@@ -35,6 +35,25 @@ module.exports.showBlog = (posts) => {
         // Populate output
         output.appendChild(section);
     }
+
+    let paginationButtonAmount = (totalPosts % postsPerPage) + 1;
+
+    let paginationButtonDiv = document.createElement("div");
+    paginationButtonDiv.classList.add("pagination-button");
+
+    for(let i = 0; i < paginationButtonAmount; i++){
+        let anchor = document.createElement("a");
+        anchor.appendChild(document.createTextNode(`Page ${ i < 1 ? 1 : (i*postsPerPage)}`));
+        anchor.setAttribute("href", "#page-title");
+        anchor.classList.add("pagination-button");
+        anchor.classList.add("PostsPage");
+        anchor.setAttribute("startPost", `${ i < 1 ? 1 : (i*postsPerPage)}`);
+        anchor.setAttribute("endPost", `${ i < 1 ? postsPerPage : ((i*postsPerPage)+postsPerPage)}`);
+        
+        paginationButtonDiv.appendChild(anchor);
+    }
+    
+    output.appendChild(paginationButtonDiv);
 };
 
 

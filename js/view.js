@@ -2,6 +2,10 @@
 
 let output = document.getElementById("main-output");
 
+module.exports.clearPage = () => {
+    document.getElementById("main-output").innerHTML = "";
+};
+
 
 // Builds a dom element and returns it
 const createElement = (element, text, innerHTML = false) => {
@@ -20,6 +24,37 @@ const createElement = (element, text, innerHTML = false) => {
 module.exports.showBlog = (posts, totalPosts, postsPerPage) => {
     // Grab div that will be populated
     //Loop through posts and create them
+    
+    if(document.getElementById("search-box") === null){
+        let searchDiv = document.createElement("div");
+        searchDiv.classList.add("searchDiv");
+    
+        let label = document.createElement("label");
+        label.setAttribute("for", "search-box");
+        label.appendChild(document.createTextNode("Search"));
+    
+        let input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.setAttribute("id", "search-box");
+        input.setAttribute("placeholder", "Search...");
+    
+        searchDiv.appendChild(label);
+        searchDiv.appendChild(input);
+    
+        document.getElementById("secondary-output").appendChild(searchDiv);
+    }
+    // And there should be a text input at the top of the first article with a "Search:" label
+
+    // <label for="male">Male</label>
+    // <input type="radio" name="gender" id="male" value="male"><br>
+    //  <input type="text" name="fname" placeholder="First name"><br>
+
+    
+
+    // When the user types 3, or more, characters in a search bar at the top of the screen
+
+    // Then the articles should be filtered to any that have those characters in the title, or body of the articler 
+
     for(let i = 0; i < posts.length; i++){
         // Create blog post to be populated with
         let section = document.createElement("section");
@@ -36,7 +71,8 @@ module.exports.showBlog = (posts, totalPosts, postsPerPage) => {
         output.appendChild(section);
     }
 
-    let paginationButtonAmount = (totalPosts % postsPerPage) + 1;
+    let paginationButtonAmount = (totalPosts / postsPerPage);
+    
 
     let paginationButtonDiv = document.createElement("div");
     paginationButtonDiv.classList.add("pagination-button");

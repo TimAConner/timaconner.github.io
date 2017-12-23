@@ -33,11 +33,15 @@ const activateBlogButtons = () => {
 
 const activateSearchDiv = () => {
     let searchBox = document.getElementById("search-box");
-    searchBox.addEventListener("keydown", (e) => {
+    searchBox.addEventListener("keyup", (e) => {
         let term = searchBox.value.toLowerCase();
         if(term.length >= 3){
             currentPosts = allPosts.filter((post) => (post.title.toLowerCase().indexOf(term) !== -1 || post.content.toLowerCase().indexOf(term) !== -1));
             view.clearMainOutput();
+            view.showBlog(selectPosts(0, 5), currentPosts.length, 5);
+        } else {
+            view.clearMainOutput();
+            currentPosts = allPosts;
             view.showBlog(selectPosts(0, 5), currentPosts.length, 5);
         }
     });

@@ -4,6 +4,11 @@ let output = document.getElementById("main-output");
 
 module.exports.clearPage = () => {
     document.getElementById("main-output").innerHTML = "";
+    document.getElementById("secondary-output").innerHTML = "";
+};
+
+module.exports.clearMainOutput = () => {
+    document.getElementById("main-output").innerHTML = "";
 };
 
 
@@ -20,11 +25,7 @@ const createElement = (element, text, innerHTML = false) => {
     return domElement;
 };
 
-// Populate output with blog posts
-module.exports.showBlog = (posts, totalPosts, postsPerPage) => {
-    // Grab div that will be populated
-    //Loop through posts and create them
-    
+const showSearchInput = () => {
     if(document.getElementById("search-box") === null){
         let searchDiv = document.createElement("div");
         searchDiv.classList.add("searchDiv");
@@ -43,8 +44,14 @@ module.exports.showBlog = (posts, totalPosts, postsPerPage) => {
     
         document.getElementById("secondary-output").appendChild(searchDiv);
     }
-    // And there should be a text input at the top of the first article with a "Search:" label
+};
+// Populate output with blog posts
+module.exports.showBlog = (posts, totalPosts, postsPerPage) => {
+    // Grab div that will be populated
+    //Loop through posts and create them
 
+    // And there should be a text input at the top of the first article with a "Search:" label
+    showSearchInput();
     // <label for="male">Male</label>
     // <input type="radio" name="gender" id="male" value="male"><br>
     //  <input type="text" name="fname" placeholder="First name"><br>
@@ -95,6 +102,7 @@ module.exports.showBlog = (posts, totalPosts, postsPerPage) => {
 
 module.exports.showProjects = (projects) => {
         let projectsHtml = document.createDocumentFragment();
+        showSearchInput();
 
         for(let i = 0; i < projects.length; i++){
             let article = document.createElement("article"),

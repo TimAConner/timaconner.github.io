@@ -25,7 +25,7 @@ const selectPosts = (startPost, endPost) => {
 const activateBlogButtons = () => {
     document.getElementById("main-output").addEventListener("click", function(){
         if(event.target.classList.contains("PostsPage")){
-            view.clearPage();
+            view.clearMainOutput();
             view.showBlog(selectPosts(event.target.getAttribute("startPost"),  event.target.getAttribute("endPost")), currentPosts.length, 5);
         }
     });
@@ -37,7 +37,7 @@ const activateSearchDiv = () => {
         let term = searchBox.value.toLowerCase();
         if(term.length >= 3){
             currentPosts = allPosts.filter((post) => (post.title.toLowerCase().indexOf(term) !== -1 || post.content.toLowerCase().indexOf(term) !== -1));
-            view.clearPage();
+            view.clearMainOutput();
             view.showBlog(selectPosts(0, 5), currentPosts.length, 5);
         }
     });

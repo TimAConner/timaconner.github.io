@@ -13,8 +13,8 @@ module.exports.fetchData = (url) => {
                 let xhr = new XMLHttpRequest();
                 let data;
         
-               // let url = `${apiKey.key}/posts.json`;
-                //let url = "../json/blog-post.json";
+            //    let url = `${apiKey.key}/posts.json`;
+            //     let url = "../json/blog-post.json";
                 //Activate on load to populate data with blog posts
                 xhr.addEventListener("load", function() {
                     resolve(JSON.parse(this.responseText));
@@ -27,4 +27,12 @@ module.exports.fetchData = (url) => {
             });
         });
     }); 
+};
+
+module.exports.savePost = (post) => {
+    let jsonString = JSON.stringify(post);
+    
+    let postRequest = new XMLHttpRequest();
+    postRequest.open("POST", "https://timaconner-github-io.firebaseio.com/posts.json");
+    postRequest.send(jsonString);
 };

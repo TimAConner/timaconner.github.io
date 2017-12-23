@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <title>Admin</title>
+</head>
+<body>
+    <header>
+        <h2 class="logo">Tim A. Conner</h2>
+        <nav>
+            <ul id="menu" class="menu">
+                        
+            </ul> 
+        </nav>
+    </header> 
+    
+    <main>
+
+        <h1 id="page-title"></h1>
+        <div id="secondary-output">
+
+        </div>
+        <div id="main-output">
+                <main>
+                    <h2>Blog Post Form</h2>
+                    <form id="blog-form">
+                        <label for="title">Title</label>
+                        <input type="text" placeholder="Title" id="title">
+                        <br/>
+                        <br/>
+                        <label for="content">Content</label>
+                        <textarea  id="content" placeholder="Content...." ></textarea>
+                        <br/>
+                        <br/>
+                        <button id="post-btn">Post</button>
+                    </form>
+                    <br/>
+                    <h3>Preview</h3>
+                    <div id="preview">
+            
+                    </div>
+                    <!-- {
+                        "content": "Class Topic: Functions",
+                        "date": "29 November 2017",
+                        "timestamp": "1511913600",
+                        "content": "<article> <section> <h4>SOLID Principles -- Single Responsiblity</h4> <p>Functions that do one thing, that have one clear responsibility. Err on the side of smaller functions.</p> <h5>'S' Check List</h5> <ul> <li>Don't have functions that would have a name addElementsAndDeleteElements. Break into more than one.</li> <li>Are there any useful parts that can be extracted?</li> <li>Can another funciton be resued here?</li> </ul> <p class='question'>Do more thinking on: breaking down a funciton into multiple functions to give them descriptive names to make the code more readable vs. breaking it down only to resuable code junks.</p> </section> <section> <h4>Arrow Functions</h4> <p>These have always confused me when I have seen them. They are shorthand for anonymous functions and changes what <i>this</i> means in their scope.</p> <pre class='code'>function(x){return x+1;} //is the same as x => x + 1; </pre> <p>I have seen these before in find functions. Array.find(x => x > 5). Previously, these did not make sense. .find feeds in an argument to x, an element, and then it returns if x > 5.</p> </section> <section> <h4>Bubbling</h4> <p>When an event happens (whatever that means) it is sent up the DOM tree, moving from parent to parent. Every parent can have a listener and hear an event.</p> <p>event.target = the elemtent clicked on. event.currentTarget = element that listener is on.</p> <p>This has a lot of potential to usee when dealing with lots of buttons. The element above them holds the listener, not each button. Will have to do more research into the best ways to implement this.</p> </section> <section> <h4>Hoisting</h4> <p>Javascript sifts through the script and moves var and function to top of the file. Only the declaration is hoisted--it sets aside a data slot for their refrence name, but it does not assign a value.</p> </section> <section> <h4>Random</h4> <p>Order functions that will be called in another function before the function that calls them. This makes it easier to read for someone looking at the code for the first time.</p> <pre class='code'>function1(){}function2(){}callFunctions(){function1();function2();} </pre> </section> <section> <h4>Hotkeys</h4> <h5>VS Code</h5> <ul> <li>alt + left/right arrow keys = move between tabs</li> <li>alt + cntrl + left/right arrow keys = switch tab to other view. </li> <li>alt + up/down arrow = move line of code up /down in document.</li> </ul> <h5>Google Chrome</h5> <ul> <li>cntrl + tab = forward tab</li> <li>cntrl + shift + tab = backward tab</li> <li>ctrl + w = close tab</li> </ul> </section>"
+                    }, -->
+                </main>
+        </div>
+        <!-- <h1>Resume</h1>
+        <section>  Issue #1 User should see your story.
+            <article>
+                <h2>Why?</h2>
+                <p>Why am I a programmer? I'm glad you asked.  It's a doozy.</p>
+                <p>I love to create.  That's it.</p>
+            </article>
+        </section> -->
+        
+    </main>
+   
+    <footer>
+        <small>&copy; 2017 Tim A. Conner</small>
+    </footer>
+    <!-- <script type="text/javascript" src="js/main.js"></script> -->
+    <script type="text/javascript" src="../dist/blogForm.js"></script>
+</body>
+</html>

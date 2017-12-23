@@ -113,9 +113,9 @@ module.exports.showProjects = (projects) => {
             article.classList.add("project-card");
 
             a.setAttribute("href", projects[i].link);
-            a.appendChild(document.createTextNode(projects[i].name));
+            a.appendChild(document.createTextNode(projects[i].title));
 
-            p.appendChild(document.createTextNode(projects[i].description));
+            p.appendChild(document.createTextNode(projects[i].content));
 
             h2.appendChild(a);
             article.appendChild(h2);

@@ -2,6 +2,8 @@
 
 const model = require('./model');
 const view = require('./view');
+const searchUtility = require('./searchUtility');
+
 
 let allProjects = [];
 let selectedProjects = [];
@@ -11,24 +13,9 @@ module.exports.buildProjects = () => {
         allProjects = projectsObject.projects;
         selectedProjects = allProjects;
         view.showProjects(selectedProjects);
-        activateSearchDiv();
-    });
-};  
-
-const activateSearchDiv = () => {
-    let searchBox = document.getElementById("search-box");
-    searchBox.addEventListener("keyup", (e) => {
-        let term = searchBox.value.toLowerCase();
-
-        if(term.length >= 3){
-            selectedProjects = allProjects.filter((project) => (project.name.toLowerCase().indexOf(term) !== -1 || project.description.toLowerCase().indexOf(term) !== -1));
-            view.clearMainOutput();
+        searchUtility.activateSearchDiv({allArray: allProjects, selectedArray: selectedProjects}, function(arraysObject){
+            selectedProjects = arraysObject.selectedArray;
             view.showProjects(selectedProjects);
-        } else {
-            view.clearMainOutput();
-            selectedProjects = allProjects;
-            view.showProjects(selectedProjects);
-        }
-
+        });
     });
 };

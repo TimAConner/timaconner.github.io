@@ -165,10 +165,10 @@ module.exports.showContacts = (contacts) => {
 
 module.exports.showMenu = (menuItems) => {
     let menu = document.getElementById("menu");
-    for(let i = 0; i < menuItems.length; i++){
-        let anchor = createElement("a", menuItems[i].title);
+    for(let item in menuItems){
+        let anchor = createElement("a", item);
         anchor.setAttribute("href", "#");
-        anchor.setAttribute("id", menuItems[i].title);
+        anchor.setAttribute("id", item);
 
         let li = createElement("li", "");
         li.appendChild(anchor);

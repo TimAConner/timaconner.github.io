@@ -2,9 +2,9 @@
 const model = require('./model');
 const view = require('./view');
 
-const pageControllers = {
-    "Blog" : require("./blogController"),
+const menuItems = {
     "Home" : require("./homeController"),
+    "Blog" : require("./blogController"),
     "Contact" : require("./contactsController"),
     "Resume" : require("./resumeController"),
     "Projects" :  require("./projectsController")
@@ -14,7 +14,7 @@ const pageControllers = {
 
 
 const hasMenuItem = (item) => {
-    for(let menuItem in pageControllers){
+    for(let menuItem in menuItems){
         if(menuItem === item){
             return true;
         }
@@ -32,15 +32,13 @@ const activateMenu = () => {
             view.clearPage();
             document.getElementById("page-title").innerText = title;
             document.title = title;
-            pageControllers[title][`build${title}`]();
+            menuItems[title][`build${title}`]();
         }
     });
 };
 
 module.exports.buildMenu = () => {
-    model.fetchData("../json/menu.json").then(menuItems => {
-        view.showMenu(menuItems.items);
+        view.showMenu(menuItems);
         activateMenu();
-    });
 };
 

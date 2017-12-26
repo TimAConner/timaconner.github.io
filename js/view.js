@@ -204,3 +204,20 @@ module.exports.showResume = (jobs) => {
 
     output.appendChild(jobsHtml);
 };
+
+
+module.exports.showBlogList = (posts) => {
+    let postList = document.getElementById("blog-list");
+    
+    let listFragment = document.createDocumentFragment();
+
+    for(let i = 0; i < posts.length; i++){
+        let li = document.createElement("li");
+        li.classList.add("old-blog-post");
+        li.setAttribute("timestamp", posts[i].timestamp);
+        li.appendChild(document.createTextNode(`${posts[i].title} on ${posts[i].date}`));
+        listFragment.appendChild(li);
+    }
+
+    postList.appendChild(listFragment);
+};

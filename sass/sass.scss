@@ -19,6 +19,15 @@
     }
 }
 
+#blog-list {
+    height: 20%;
+    overflow-y: scroll;
+}
+
+.old-blog-post:hover {
+    cursor: pointer;
+}
+
 .project-card {
     h2,
     p {

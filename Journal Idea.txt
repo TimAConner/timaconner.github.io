@@ -1,0 +1,21 @@
+
+1
+module.exports.function();
+
+Module exports is an object, so to refer to one within a function you can say that.  Function is 
+a string also.  So, can you do module.exports[${functionName}]
+
+
+
+
+2 (NOPE THIS DOESNT WORK AS I THOUGHT IT WOULD.)
+Objects pass references.  meaning, if you want a function to have control of variables, pass that variable in an object, not just itself.  If you pass itself, it will be passed as a value.
+
+script.doThis({
+array: thisArray
+});
+
+doThis (obj) {
+obj.array = [];
+}
+https://www.htmlgoodies.com/html5/javascript/passing-javascript-function-arguments-by-reference.html

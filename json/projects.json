@@ -1,8 +1,38 @@
 {
     "projects" : [
         {
-            "name" : "Discombobulated Chat",
-            "description" : "A simple chatroom that can be logged into through your Gmail account.",
+            "title" : "Discombobulated Chat",
+            "content" : "A simple chatroom that can be logged into through your Gmail account.",
+            "link" : "https://github.com/nss-day-cohort-23/group-project-chatty-jjt"
+        },
+        {
+            "title" : "00001 Chat",
+            "content" : "A simple chatroom that can be logged into through your Gmail account.",
+            "link" : "https://github.com/nss-day-cohort-23/group-project-chatty-jjt"
+        },
+        {
+            "title" : "000012 Chat",
+            "content" : "A simple chatroom that can be logged into through your Gmail account.",
+            "link" : "https://github.com/nss-day-cohort-23/group-project-chatty-jjt"
+        },
+        {
+            "title" : "0000123 Chat",
+            "content" : "A simple chatroom that can be logged into through your Gmail account.",
+            "link" : "https://github.com/nss-day-cohort-23/group-project-chatty-jjt"
+        },
+        {
+            "title" : "1 Chat",
+            "content" : "A simple chatroom that can be logged into through your Gmail account.",
+            "link" : "https://github.com/nss-day-cohort-23/group-project-chatty-jjt"
+        },
+        {
+            "title" : "2 Chat",
+            "content" : "A simple chatroom that can be logged into through your Gmail account.",
+            "link" : "https://github.com/nss-day-cohort-23/group-project-chatty-jjt"
+        },
+        {
+            "title" : "3 Chat",
+            "content" : "A simple chatroom that can be logged into through your Gmail account.",
             "link" : "https://github.com/nss-day-cohort-23/group-project-chatty-jjt"
         }
     ]

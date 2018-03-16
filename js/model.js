@@ -13,7 +13,7 @@ module.exports.fetchData = (url) => {
                 let xhr = new XMLHttpRequest();
                 let data;
         
-            //    let url = `${apiKey.key}/posts.json`;
+                // let url = `${apiKey.key}/posts.json`; // For Firebase
             //     let url = "../json/blog-post.json";
                 //Activate on load to populate data with blog posts
                 xhr.addEventListener("load", function() {
@@ -22,17 +22,42 @@ module.exports.fetchData = (url) => {
             
                 xhr.open("GET", url);
                 xhr.send();
-            }).then(data => {
-                resolve(data);
+            }).then(posts => {
+                // posts = sortFirebaseArray(posts); // For Firebase
+                // console.log(posts); // For Firebase
+                resolve(posts);
             });
         });
     }); 
 };
 
 module.exports.savePost = (post) => {
-    let jsonString = JSON.stringify(post);
+    apiLoader.fetch().then((apiKey) => {
+        let jsonString = JSON.stringify(post);
+        
+        let postRequest = new XMLHttpRequest();
+        postRequest.open("PATCH", `${apiKey.key}/posts/${post.timestamp}.json`);
+        postRequest.send(jsonString);
+    });
+};
+
+const sortFirebaseArray = (firebaseArray) => {
+    let sortedArray = [];
     
-    let postRequest = new XMLHttpRequest();
-    postRequest.open("POST", "https://timaconner-github-io.firebaseio.com/posts.json");
-    postRequest.send(jsonString);
+    for(let post in firebaseArray){
+        sortedArray.push(firebaseArray[post]);
+    }
+
+    sortedArray = sortedArray.sort((a, b) => b.timestamp - a.timestamp);
+    return sortedArray;
+};
+
+module.exports.editData = (post) => {
+    apiLoader.fetch().then((apiKey) => {
+        let jsonString = JSON.stringify(post);
+        
+        let postRequest = new XMLHttpRequest();
+        postRequest.open("PATCH", `${apiKey.key}/posts.json`);
+        postRequest.send(jsonString);
+    });
 };

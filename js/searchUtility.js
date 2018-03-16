@@ -8,10 +8,12 @@ module.exports.activateSearchDiv = (arraysObject, callBackFunction) => {
     searchBox.addEventListener("keyup", (e) => {
         let term = searchBox.value.toLowerCase();
         let minimumCharacters = 3;
+
         if(term.length >= minimumCharacters){
             arraysObject.selectedArray = arraysObject.allArray.filter((x) => (x.title.toLowerCase().indexOf(term) !== -1 ||x.content.toLowerCase().indexOf(term) !== -1));
+            
             view.clearMainOutput();
-           callBackFunction(arraysObject);
+            callBackFunction(arraysObject);
         } else {
             view.clearMainOutput();
             arraysObject.selectedArray = arraysObject.allArray;

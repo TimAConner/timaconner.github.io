@@ -48,7 +48,6 @@ const activateSubmitButton = () => {
             dateString = `${date.getDate()} ${monthNames[date.getMonth()]} ${date.getFullYear()}`;
         }
 
-
         post = {
             title:  document.getElementById("title").value,
             timestamp:  currentTimestamp,
@@ -57,6 +56,7 @@ const activateSubmitButton = () => {
         };
         
         model.savePost(post);
+
         alert("Success!"); // jshint ignore:line
     });
 };

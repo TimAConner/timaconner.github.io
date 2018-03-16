@@ -1,5 +1,6 @@
 "use strict";
 
 // Create menu
-require('./menu');
+let menuController = require('./menuController');
+menuController.buildMenu();
 

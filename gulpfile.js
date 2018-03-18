@@ -6,7 +6,11 @@ gulp.task('sass', function(){
     .pipe(sass()) // Using gulp-sass
     .pipe(gulp.dest('app/css'))
 });
+gulp.task('fonts', function() {
+  return gulp.src('node_modules/font-awesome/fonts/*')
+    .pipe(gulp.dest('app/fonts'))
+})
 
 gulp.task('watch', function(){
-  gulp.watch('app/scss/**/*.scss', ['sass']); 
+  gulp.watch('app/scss/**/*.scss', ['sass', 'fonts']); 
 })

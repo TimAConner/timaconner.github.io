@@ -7,10 +7,10 @@ gulp.task('sass', function(){
     .pipe(gulp.dest('app/css'))
 });
 gulp.task('fonts', function() {
-  return gulp.src('node_modules/font-awesome/fonts/*')
-    .pipe(gulp.dest('app/fonts'))
+  return gulp.src('node_modules/font-awesome/css/*')
+    .pipe(gulp.dest('app/css'))
 })
 
 gulp.task('watch', function(){
-  gulp.watch('app/scss/**/*.scss', ['sass', 'fonts']); 
+  gulp.watch('app/scss/**/*.scss', ['sass']); 
 })

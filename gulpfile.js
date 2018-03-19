@@ -10,11 +10,13 @@ gulp.task('sass', function(){
     .pipe(sass()) // Using gulp-sass
     .pipe(gulp.dest('app/css'))
 });
+
 gulp.task('compile-css', function () {
   return gulp.src('app/css/**/*.css')
     .pipe(concatCss('bundle.css'))
     .pipe(gulp.dest('app/cssBundle/'));
 });
+
 gulp.task('fonts', function() {
   gulp.src(fontAwesome.fonts)
     .pipe(gulp.dest('./app/fonts'));

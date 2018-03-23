@@ -4,7 +4,7 @@
     const mobileMenuBurger = document.getElementById('mobile-menu-burger');
     const menu = document.getElementById('menu');
     mobileMenuBurger.addEventListener('click', () => {
-        mobileMenuBurger.classList.toggle('change');
+        mobileMenuBurger.classList.toggle('x-burger');
         menu.classList.toggle('pull-out-mobile-menu');
     });
 })();

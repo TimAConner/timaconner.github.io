@@ -1,5 +1,5 @@
 
-$menu-backroud-color: rgba(128, 128, 128, 0.9);
+$menu-backroud-color: rgba(182, 182, 182, 0.9);
 $divider-border-color: gray;
 $main-text-color: #343a40;
 $header-text-color: black;
@@ -94,7 +94,7 @@ footer {
 
 .my-name {
     font-size: 3em;
-    margin-top: 1.25em;
+    margin-top: 1.5em;
     color: $header-text-color;
 }
 
@@ -146,29 +146,50 @@ footer {
     transition: 0.4s;
 }
 
-.change .bar1 {
+.x-burger .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
 }
 
-.change .bar2 {opacity: 0;}
+.x-burger .bar2 {opacity: 0;}
 
-.change .bar3 {
+.x-burger .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
 }
 
-.pull-out-mobile-menu {
-    top: 0;
-    transform: translate(0, 100px);
-    background: $menu-backroud-color;
+.mobile-menu-size {
     height: 50vh;
     width: 100vw;
 }
 
+.pull-out-mobile-menu {
+    top: 0;
+    transform: translate(0, 250px);
+    background: $menu-backroud-color;
+
+}
+
 .menu {
+    
     transition: all 1s ease-in-out;
     position: fixed;
-    top: -100px;
+    top: -250px;
     z-index: 1;
+    li {
+        margin-top: 1em;
+        margin-left: 1em;
+
+        h2 {
+            color: $header-text-color;
+            font-size: 2.5em;
+        }
+
+        a {
+            text-transform: uppercase;
+            color: $header-text-color;
+            text-decoration: none;
+            font-size: 2em;
+        }
+    }
 }

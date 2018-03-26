@@ -99,7 +99,7 @@ footer {
 }
 
 .profile-pic {
-    border-radius: 50%;
+    border-radius: 15%;
 }
 
 .center {
@@ -201,18 +201,41 @@ footer {
         margin-left: 5em;
     }
 
+
+    
     #mobile-menu-burger {
         display: none;
+    }
+    
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        img {
+            width: 75%;
+        }
     }
 
     .my-name {
         margin-top: 2.5em;
     }
 
-
-    .skills {
-        width: 50%;
+    .projects,
+    .jobs,
+    .skills-grid {
+        display: grid;
     }
+    .projects {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .jobs {
+        grid-template-columns: 1fr 1fr;
+    }
+    .skills-grid {
+        justify-items: center;
+        align-items: top;
+        grid-template-columns: 3fr 1fr 1fr;
+    }
+    
 
     .menu {
         background-color: $menu-backroud-color;

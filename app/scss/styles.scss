@@ -6,13 +6,25 @@ $header-text-color: black;
 $highlight-color: cyan;
 $background-color: #f9f9f9;
 
+$desktop-margin: 5em;
+
 
 body {
     background-color: $background-color;
     font-family: 'Roboto', sans-serif;
     color: $main-text-color;
+
     main {
-        margin: 0 0.4em;
+        margin: 0 1em;
+
+        section { 
+            border-bottom: 1px solid $divider-border-color;
+
+            &:last-child{
+                border-bottom: 0px;
+            }
+        }
+
     }
     i {
         font-family: 'Font Awesome 5';
@@ -22,6 +34,7 @@ body {
         line-height: 1.25em;
     }
 }
+
 
 
 section {
@@ -36,7 +49,6 @@ section {
 
     padding-top: 1em;
     padding-bottom: 1em;
-    border-bottom:  1px solid $divider-border-color;
 
     article {
         padding-top: 1em;
@@ -64,18 +76,28 @@ section {
         margin-top: 1em;
     }
 
-    .skills ul {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-items: center;
-        
-        li {
-            font-size: 2.5em;
+    .skills {
+        ul {       
+            display: grid;
+            justify-items: center;
+            
+            li {
+                text-align: center;
+                font-size: 2.5em;
+            }
+
+            img {
+                object-fit: cover;
+                width: 35%;
+            }
+        }
+        .programming {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
         }
 
-        img {
-            object-fit: cover;
-            width: 100%;
+        .version-control,
+        .task-automation {
+            grid-template-columns: 1fr 1fr;
         }
     }
 
@@ -192,17 +214,21 @@ footer {
         }
     }
 
+    footer {
+        border-top: 1px solid $divider-border-color;
+    }
     
 // This applies from 600px onwards
 @media (min-width: 700px) {
 
-    main {
-        margin-right: 5em;
-        margin-left: 5em;
-    }
-
-
+    $menu-backroud-color: rgba(182, 182, 182, 0.4);
     
+    main {
+        margin-right: $desktop-margin !important;
+        margin-left: $desktop-margin !important;
+    }
+    
+
     #mobile-menu-burger {
         display: none;
     }
@@ -223,6 +249,7 @@ footer {
     .jobs,
     .skills-grid {
         display: grid;
+        grid-gap: 0.5em;
     }
     .projects {
         grid-template-columns: 1fr 1fr 1fr;
@@ -233,7 +260,37 @@ footer {
     .skills-grid {
         justify-items: center;
         align-items: top;
-        grid-template-columns: 3fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
+
+        display: grid;
+
+        grid-template-areas: 
+            "programming-header version-header task-header"
+            "programming  version-control task-automation";
+
+        // To reorganize DOM order
+        // Column headers
+        .programming-header {
+            grid-area: programming-header;
+        }
+        .task-headers {
+            grid-area: task-header;
+        }
+        .version-header {
+            grid-area: version-header;
+        }
+
+        // To reorganize DOM order
+        // Column bodies
+        .programming {
+            grid-area: programming;
+        }
+        .version-control {
+            grid-area: version-control;
+        }
+        .task-automation {
+            grid-area: task-automation;
+        }
     }
     
 
@@ -245,10 +302,24 @@ footer {
         height: 5em;
         top: 0px; // required as well.
 
-        .menu-links {
+
+        .logo {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+        }
+        
+        li {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+        }
+
+        .links {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            justify-items: center;
+            justify-items: baseline;
+            align-items: center;
         }
     }
 }

@@ -209,20 +209,21 @@ footer {
 }
 
 .mobile-menu-size {
-    height: 50vh;
-    width: 100vw;
+    height: 100vh;
+    width: 60vw;
 }
 
 .pull-out-mobile-menu {
     top: 0;
-    transform: translate(0, 500px);
+    transform: translate(500px, 0);
     background: $menu-backroud-color;
 }
 
 .menu {  
     transition: all 1s ease-in-out;
     position: fixed;
-    top: -500px;
+    left: -500px;
+    top: 0;
     z-index: 1;
     li {
         margin-top: 1em;
@@ -390,10 +391,12 @@ footer {
     .menu {
         background-color: $menu-backroud-color;
         display: grid;
-        grid-template-columns: 50% 1fr;
+        grid-template-columns: 30% 1fr;
         position: fixed;
         height: 3.5em;
         top: 0px; // required as well.
+        left: 0px;
+        width: 100%;
 
 
         .logo {
@@ -410,7 +413,7 @@ footer {
 
         .links {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             justify-items: baseline;
             align-items: center;
         }

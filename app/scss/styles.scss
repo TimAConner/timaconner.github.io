@@ -1,6 +1,7 @@
 
-$menu-backroud-color: rgba(182, 182, 182, 0.95);
-$divider-border-color: gray;
+$menu-backroud-color: rgba(105, 105, 105, 0.95);
+$divider-border-color: rgba(105, 105, 105, 0.95);
+$menu-font-color: #f9f9f9;
 $divider-width: 1px;
 $divider-width-thin: 0.5px;
 
@@ -15,7 +16,7 @@ $large-desktop-margin: 8em;
 
 body {
     background-color: $background-color;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     color: $main-text-color;
 
     main {
@@ -148,6 +149,7 @@ footer {
         margin: 0 1em;
     }
     img {
+        width: 50%;
         border-radius: 15%;
         padding: 1em;
     }
@@ -225,6 +227,11 @@ footer {
     left: -500px;
     top: 0;
     z-index: 1;
+
+    .horizontal-line {
+        padding-top: 1em;   
+    }
+
     li {
         margin-top: 1em;
         margin-left: 1em;
@@ -235,6 +242,7 @@ footer {
         }
 
         a {
+            color: $menu-font-color !important;
             margin-left: 1em;
             text-transform: uppercase;
             color: $header-text-color;
@@ -258,7 +266,7 @@ footer {
 
 // This applies from 700px onwards
 @media (min-width: 700px) {
-    $menu-backroud-color: rgba(182, 182, 182, 0.95);
+    $menu-backroud-color: rgba(105, 105, 105, 0.95);
     
     main {
         margin-right: $desktop-margin !important;
@@ -267,7 +275,7 @@ footer {
 
     nav {
         .menu-button {
-            font-size: 1.5em !important;
+            font-size: 1em !important;
         }
     }
 
@@ -391,7 +399,7 @@ footer {
     .menu {
         background-color: $menu-backroud-color;
         display: grid;
-        grid-template-columns: 30% 1fr;
+        grid-template-areas: ". links . ";
         position: fixed;
         height: 3.5em;
         top: 0px; // required as well.
@@ -409,12 +417,17 @@ footer {
             margin-top: 0;
             margin-bottom: 0;
             margin-left: 0;
+            a {
+                color: $menu-font-color;
+                margin-left: 0;
+            }
         }
 
         .links {
+            grid-area: links;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            justify-items: baseline;
+            justify-items: center;
             align-items: center;
         }
     }

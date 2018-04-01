@@ -19,6 +19,10 @@ body {
     color: $main-text-color;
 
     main {
+        .body-contact {
+            display: none;
+        }
+
         margin: 0 1em;
 
         section { 
@@ -163,95 +167,94 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
 
-    .social-link {
-        text-decoration: none;
-        color: black;
-        font-size: 3em;
-        display: inline-block;
+}
+.social-link {
+    text-decoration: none;
+    color: black;
+    font-size: 3em;
+    display: inline-block;
+}
+
+.mobile-burger-container {
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 2;
+
+    border: $divider-width solid black;
+    padding: 0.25em;
+    border-radius: 0.25em;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.x-burger .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.x-burger .bar2 {opacity: 0;}
+
+.x-burger .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.mobile-menu-size {
+    height: 50vh;
+    width: 100vw;
+}
+
+.pull-out-mobile-menu {
+    top: 0;
+    transform: translate(0, 250px);
+    background: $menu-backroud-color;
+}
+
+.menu {  
+    transition: all 1s ease-in-out;
+    position: fixed;
+    top: -250px;
+    z-index: 1;
+    li {
+        margin-top: 1em;
+        margin-left: 1em;
+
+        h2 {
+            color: $header-text-color;
+            font-size: 2.5em;
+        }
+
+        a {
+            margin-left: 1em;
+            text-transform: uppercase;
+            color: $header-text-color;
+            text-decoration: none;
+            font-size: 2em;
+        }
     }
 }
 
-    .mobile-burger-container {
-        position: fixed;
-        right: 1em;
-        top: 1em;
-        display: inline-block;
-        cursor: pointer;
-        z-index: 2;
-
-        border: $divider-width solid black;
-        padding: 0.25em;
-        border-radius: 0.25em;
+.jobs {
+    p {
+        width: 90%;
+        margin: 0 auto;
+        text-align: justify;
     }
+}
 
-    .bar1, .bar2, .bar3 {
-        width: 35px;
-        height: 5px;
-        background-color: #333;
-        margin: 6px 0;
-        transition: 0.4s;
-    }
+footer {
+    border-top: 1px solid $divider-border-color;
+}
 
-    .x-burger .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-9px, 6px);
-    }
-
-    .x-burger .bar2 {opacity: 0;}
-
-    .x-burger .bar3 {
-        -webkit-transform: rotate(45deg) translate(-8px, -8px);
-        transform: rotate(45deg) translate(-8px, -8px);
-    }
-
-    .mobile-menu-size {
-        height: 50vh;
-        width: 100vw;
-    }
-
-    .pull-out-mobile-menu {
-        top: 0;
-        transform: translate(0, 250px);
-        background: $menu-backroud-color;
-
-    }
-
-    .menu {  
-        transition: all 1s ease-in-out;
-        position: fixed;
-        top: -250px;
-        z-index: 1;
-        li {
-            margin-top: 1em;
-            margin-left: 1em;
-
-            h2 {
-                color: $header-text-color;
-                font-size: 2.5em;
-            }
-
-            a {
-                margin-left: 1em;
-                text-transform: uppercase;
-                color: $header-text-color;
-                text-decoration: none;
-                font-size: 2em;
-            }
-        }
-    }
-
-    .jobs {
-        p {
-            width: 90%;
-            margin: 0 auto;
-            text-align: justify;
-        }
-    }
-
-    footer {
-        border-top: 1px solid $divider-border-color;
-    }
-    
 // This applies from 700px onwards
 @media (min-width: 700px) {
 
@@ -261,22 +264,60 @@ footer {
         margin-right: $desktop-margin !important;
         margin-left: $desktop-margin !important;
     }
-    
+
+    nav {
+        .menu-button {
+            font-size: 1.5em !important;
+        }
+    }
+
+    // Hide contact info under my name on larger screens
+    .nav-contact {
+        display: none;
+    }
 
     #mobile-menu-burger {
         display: none;
     }
+    .social-link-menu {
+        grid-area: contact;
+    }
     
     .about-grid {
         display: grid;
-        grid-template-columns: 1fr 5fr;
+        grid-template-areas: "picture about contact";
         img {
             width: 75%;
         }
+        .img {
+            grid-area: picture;
+        }
+        .about {
+            grid-area: about;
+        }
+        .body-contact {
+            display: block;
+            grid-area: contact;
+
+            ul {
+                grid-template-columns: 0;
+                grid-template-rows: 1fr 1fr 1fr;
+                li {
+                    margin-bottom: 1em;
+                    a {
+                        font-size: 1.25em;
+                        i {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }
     }
 
+
     .my-name {
-        margin-top: 2.5em;
+        margin-top: 1.5em;
     }
 
 
@@ -336,7 +377,7 @@ footer {
         display: grid;
         grid-template-columns: 50% 1fr;
         position: fixed;
-        height: 5em;
+        height: 3.5em;
         top: 0px; // required as well.
 
 

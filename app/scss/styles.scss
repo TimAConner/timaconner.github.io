@@ -257,7 +257,6 @@ footer {
 
 // This applies from 700px onwards
 @media (min-width: 700px) {
-
     $menu-backroud-color: rgba(182, 182, 182, 0.95);
     
     main {
@@ -321,7 +320,23 @@ footer {
     }
 
 
+    section {
+        h2 {
+            font-size: 1.75em;
+        }
 
+        .projects h3 {
+            font-size: 1em;
+
+        }
+    
+        .jobs h3,
+        .skills h3 {
+            font-size: 1em;
+        }
+    }
+
+    
     .projects,
     .jobs,
     .skills-grid {

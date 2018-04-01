@@ -1,12 +1,16 @@
 
-$menu-backroud-color: rgba(182, 182, 182, 0.9);
+$menu-backroud-color: rgba(182, 182, 182, 0.95);
 $divider-border-color: gray;
+$divider-width: 1px;
+$divider-width-thin: 0.5px;
+
 $main-text-color: #343a40;
 $header-text-color: black;
 $highlight-color: cyan;
 $background-color: #f9f9f9;
 
 $desktop-margin: 5em;
+$large-desktop-margin: 8em;
 
 
 body {
@@ -18,7 +22,7 @@ body {
         margin: 0 1em;
 
         section { 
-            border-bottom: 1px solid $divider-border-color;
+            border-bottom: $divider-width solid $divider-border-color;
 
             &:last-child{
                 border-bottom: 0px;
@@ -43,8 +47,8 @@ section {
         font-size: 2em;
         font-weight: bold;
         color: $header-text-color;
-        margin-top: 2em;
-        margin-bottom: 1em;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
     }
 
     padding-top: 1em;
@@ -77,6 +81,10 @@ section {
     }
 
     .skills {
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+        border-bottom: $divider-width-thin solid $divider-border-color;
+        
         ul {       
             display: grid;
             justify-items: center;
@@ -89,6 +97,9 @@ section {
             img {
                 object-fit: cover;
                 width: 35%;
+                &.unity {
+                    width: 65%;
+                }
             }
         }
         .programming {
@@ -102,9 +113,11 @@ section {
     }
 
     h4 {
+        font-size: 0.9em;
         text-transform: uppercase;
         color: $header-text-color;
         margin-bottom: 1em;
+        line-height: 1.5em;
     }
 }
 
@@ -119,9 +132,21 @@ footer {
     margin-top: 1.5em;
     color: $header-text-color;
 }
+.my-title {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+}
 
-.profile-pic {
-    border-radius: 15%;
+.about-grid {
+    p {
+        margin: 0 1em;
+    }
+    img {
+        border-radius: 15%;
+        padding: 1em;
+    }
 }
 
 .center {
@@ -154,7 +179,7 @@ footer {
         cursor: pointer;
         z-index: 2;
 
-        border: 1px solid black;
+        border: $divider-width solid black;
         padding: 0.25em;
         border-radius: 0.25em;
     }
@@ -206,6 +231,7 @@ footer {
             }
 
             a {
+                margin-left: 1em;
                 text-transform: uppercase;
                 color: $header-text-color;
                 text-decoration: none;
@@ -214,14 +240,22 @@ footer {
         }
     }
 
+    .jobs {
+        p {
+            width: 90%;
+            margin: 0 auto;
+            text-align: justify;
+        }
+    }
+
     footer {
         border-top: 1px solid $divider-border-color;
     }
     
-// This applies from 600px onwards
+// This applies from 700px onwards
 @media (min-width: 700px) {
 
-    $menu-backroud-color: rgba(182, 182, 182, 0.4);
+    $menu-backroud-color: rgba(182, 182, 182, 0.95);
     
     main {
         margin-right: $desktop-margin !important;
@@ -245,6 +279,8 @@ footer {
         margin-top: 2.5em;
     }
 
+
+
     .projects,
     .jobs,
     .skills-grid {
@@ -256,6 +292,7 @@ footer {
     }
     .jobs {
         grid-template-columns: 1fr 1fr;
+        
     }
     .skills-grid {
         justify-items: center;
@@ -323,3 +360,12 @@ footer {
         }
     }
 }
+
+// This applies from 1000px onwards
+@media (min-width: 1000px) {
+
+    main {
+        margin-right: $large-desktop-margin;
+        margin-left: $large-desktop-margin;
+    }
+};

@@ -1,6 +1,9 @@
 
-$menu-backroud-color: rgba(105, 105, 105, 0.95);
-$divider-border-color: rgba(105, 105, 105, 0.95);
+// $menu-backroud-color: rgba(105, 105, 105, 0.95);
+$menu-backroud-color: rgba(52,58,64, 0.99);
+$divider-border-color: rgba(52,58,64, 0.99);
+$hamburger-color: rgba(52,58,64, 0.99);
+
 $menu-font-color: #f9f9f9;
 $divider-width: 1px;
 $divider-width-thin: 0.5px;
@@ -185,7 +188,7 @@ footer {
     cursor: pointer;
     z-index: 2;
 
-    border: $divider-width solid black;
+    border: $divider-width solid $hamburger-color;
     padding: 0.25em;
     border-radius: 0.25em;
 }
@@ -193,7 +196,7 @@ footer {
 .bar1, .bar2, .bar3 {
     width: 35px;
     height: 5px;
-    background-color: #333;
+    background-color: $hamburger-color;
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -234,7 +237,6 @@ footer {
 
     li {
         margin-top: 1em;
-        margin-left: 1em;
 
         h2 {
             color: $header-text-color;
@@ -242,6 +244,11 @@ footer {
         }
 
         a {
+
+            &.social-link {
+                margin-left: 0;
+            }
+
             color: $menu-font-color !important;
             margin-left: 1em;
             text-transform: uppercase;
@@ -266,8 +273,11 @@ footer {
 
 // This applies from 700px onwards
 @media (min-width: 700px) {
-    $menu-backroud-color: rgba(105, 105, 105, 0.95);
     
+    .mobile-social-link {
+        display: none;
+    }
+
     main {
         margin-right: $desktop-margin !important;
         margin-left: $desktop-margin !important;
@@ -288,7 +298,11 @@ footer {
         display: none;
     }
     .social-link-menu {
+        margin-top: 0em;
         grid-area: contact;
+        .social-link {
+            padding-left: 1em;
+        }
     }
     
     .about-grid {

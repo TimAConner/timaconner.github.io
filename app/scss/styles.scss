@@ -443,6 +443,16 @@ footer {
             grid-template-columns: 1fr 1fr 1fr 1fr;
             justify-items: center;
             align-items: center;
+            width: 75%;
+            margin: 0 auto;
+        }
+    }
+}
+// This applies from 1000px onwards
+@media (min-width: 900px) {
+    .menu {
+        .links {
+            width: 100%;
         }
     }
 }

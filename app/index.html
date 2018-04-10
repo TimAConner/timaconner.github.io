@@ -23,17 +23,20 @@
     <!-- Sticky Desktop Nav -->
     <nav>
       <ul id="menu" class="mobile-menu-size menu">
-        <!-- <div class="logo">
-          <li><h2>Tim A. Conner</h2></li>
-        </div> -->
         <div class="horizontal-line">
           <!-- <hr> -->
         </div>
         <div class="links">
-          <li><a href="#nav-contact" class="menu-button">Contact</a></li>
           <li><a href="#about-section" class="menu-button">About</a></li>
           <li><a href="#projects-section" class="menu-button">Projects</a></li>
           <li><a href="#resume-section" class="menu-button">Resume</a></li>
+          <div>
+            <ul class="social-link-menu margin-top">
+                <li><a class="social-link" target="_blank" href="https://www.linkedin.com/in/timaconner/"><i class="fab fa-linkedin"></i></a></li>
+                <li><a class="social-link" target="_blank" href="https://github.com/TimAConner"><i class="fab fa-github"></i></a></li>
+                <li><a class="social-link" target="_blank" href="mailto:tim@timaconner.com"><i class="far fa-envelope"></i></a></li>
+              </ul>
+          </div>
         </div>
         <div class="horizontal-line">
           <!-- <hr> -->
@@ -44,11 +47,10 @@
       <h2 class="center my-title">Software Developer</h2>
     
       <!-- Mobile Contact -->
-      <span id="nav-contact" class="nav-contact">
-        <ul class="social-link-menu margin-top">
-          <li><a class="social-link" href="https://www.linkedin.com/in/timaconner/"><i class="fab fa-linkedin"></i></a></li>
-          <li><a class="social-link" href="https://github.com/TimAConner"><i class="fab fa-github"></i></a></li>
-          <li><a class="social-link" href="mailto:tim@timaconner.com"><i class="far fa-envelope"></i></a></li>
+        <ul class="social-link-menu mobile-social-link margin-top">
+          <li><a class="social-link" target="_blank" href="https://www.linkedin.com/in/timaconner/"><i class="fab fa-linkedin"></i></a></li>
+          <li><a class="social-link" target="_blank" href="https://github.com/TimAConner"><i class="fab fa-github"></i></a></li>
+          <li><a class="social-link" target="_blank" href="mailto:tim@timaconner.com"><i class="far fa-envelope"></i></a></li>
         </ul>
       </span>
     </nav>
@@ -68,9 +70,9 @@
         <!-- About Information -->
         <div class="about">
           <p>
-              What do I live for? Creating, problem-solving, imagining, language, and people. 
-              Where do they converge? Software development—building what people want, it’s what I love to do.
+              Hi, I’m Tim, and I’m a code-a-holic.  Yep, I have it.  The passion that drives me to immerse myself in code every day and night, the desire to dig deeper and farther with each dive into source code and documentation.
           </p>
+          <p>How code works under the hood, that's what fascinates me.  JavaScript's V8 Engine, Express, AngularJS: what makes them tick?  Working in a framework?  What about its backbone, its insides?</p>
         </div>
         <!-- Desktop Contact -->
         <div class="body-contact">
@@ -92,33 +94,39 @@
         <div class="projects">
           <article>
             <h3>Squirrels V Dwarves</h3>
-            <p>
-                Squirrels V Dwarves is a real-time, multiplayer, team based game written in JavaScript using Canvas and Firebase Real Time Database.
-            </p>
-          </article>
+            <p>A real-time, multiplayer, team based game written in JavaScript using Canvas and Firebase Real Time Database.  Researched multiplayer connection theory and basic game engine theory.</p>
+            <p class="tech-used">JavaScript, AngularJS, Firebase Realtime Database, Canvas, SASS, Grunt, and Bulma.</p>
+            <div class="link-grid">
+              <a href="https://github.com/TimAConner/Squirrels-VS-Dwarves"><i class="devicon-github-plain"></i>Github</a>
+              <a href="https://timaconner.github.io/Squirrels-VS-Dwarves/"><i class="fas fa-globe"></i>Squirrels V Dwarves</a>
+            </div>
+          </article>  
           <article>
               <h3>Please Setup Git</h3>
               <p>
-                  An npm module that enables you to setup and clone down a new or an old repository in one command.
+                  An npm module that enables you to setup and clone down a new or an old repository in one command.  Built to assit Nashville Software School teaching assistants in testing students' repostiories.
               </p>
+              <p class="tech-used-single-line">JavaScript, and NPM</p>
+              <div class="link-grid">
+                  <a href="https://github.com/TimAConner/pleaseSetupGit"><i class="devicon-github-plain"></i>GitHub</a>
+                  <a href="https://www.npmjs.com/package/please-setup-git"><i class="fas fa-globe"></i>Please Setup Git</a>
+              </div>
           </article>
           <article>
-              <h3>Please Setup Git</h3>
-              <p>
-                  An npm module that enables you to setup and clone down a new or an old repository in one command.
-              </p>
+              <h3>Bangazon API</h3>
+              <p>A RESTful API to access a basic product ordering and employee managment database.  Built apart of a group project at Nashville Software School.</p>
+              <p class="tech-used-single-line">Node, and SQLite</p>
+              <div class="link-grid">
+                  <a href="https://github.com/TimAConner/pleaseSetupGit"><i class="devicon-github-plain"></i>GitHub</a>
+              </div>
           </article>
           <article>
-              <h3>Please Setup Git</h3>
-              <p>
-                  An npm module that enables you to setup and clone down a new or an old repository in one command.
-              </p>
-          </article>
-          <article>
-              <h3>Please Setup Git</h3>
-              <p>
-                  An npm module that enables you to setup and clone down a new or an old repository in one command.
-              </p>
+              <h3>Bangazon CLI</h3>
+              <p>Allows a user to interact with a basic product ordering database for a customer via a command line interface.  Built apart of a group project at Nashville Software School and developed using Test Driven Development.</p>
+              <p class="tech-used-single-line">Node, SQLite, Mocha, and Chai.</p>
+              <div class="link-grid">
+                  <a href="https://github.com/Ducky-Chickens/bangazonCLI"><i class="devicon-github-plain"></i>GitHub</a>
+              </div>
           </article>
         </div>
         <!-- More Projects button -->
@@ -132,9 +140,6 @@
     -->
     <section id="resume-section">
       <h2>Resume</h2>
-        <!-- Add skills emojis -->
-        <!-- http://konpa.github.io/devicon/ -->
-        <!-- https://fontawesome.com/icons?d=gallery&q=gulp -->
         <div class="skills">
           <h3>Skills</h3>
           
@@ -149,14 +154,15 @@
               <li><i class="devicon devicon-jquery-plain-wordmark"></i></li>
               <li><i class="devicon-mocha-plain"></i></li>
               <li><i class="fab fa-angular"></i></li>
+              <li><i class="devicon-react-original"></i></li>
               <li><i class="devicon-bootstrap-plain"></i></li>
               <li><img src="images/Materialize-CSS.png" alt="Unity 3D Logo"></li>
               <li><i class="devicon-express-original"></i></li>
               <li><i class="devicon-mysql-plain-wordmark"></i></li>
-              <li><i class="devicon-symfony-original"></i></li>
               <li><i class="devicon-php-plain"></i></li>
               <li><i class="devicon-nodejs-plain"></i></li>
               <li><img class="unity" src="images/unity-master-black.png"alt="Unity 3D Logo"></li>
+              <li><i class="devicons devicons-npm"></i></li>
             </ul>
             
             <h4 class="version-header">Version Control</h4>
@@ -187,23 +193,19 @@
             <h3>Software Development Intern</h3>
             <h4>Global Pueblo Solutions | June 2014 – August 2014 | Chandigarh, India</h4>
             <p>
-                Intensive full-time software development bootcamp focusing on full stack development fundamentals and problem solving with the final half of the program being executed in a simulated company environment with Scrum methodology.
-                
+                A six-week summer internship in Chandigarh, India.  Developed in PHP, using Cake PHP and Symphony.  Created an employee management system and time management system for in-house use.
             </p>
           </article>  
           <article>
-            <h3>Freelance Database Programmer</h3>
-            <h4>Mission Resources Alliance | Todd Dexter & Associates | Dec 2014 – Jun 2016 | Oct 2017 – Present</h4>
-            <p>
-                Intensive full-time software development bootcamp focusing on full stack development fundamentals and problem solving with the final half of the program being executed in a simulated company environment with Scrum methodology.
-                
-            </p>
+            <h3>Contract Database Programmer</h3>
+            <h4>Dec 2014 – Jun 2016 | Oct 2017 – Present</h4>
+            <p>Perform monthly updates and quality control on MySQL databases and write SQL code.</p>
           </article> 
           <article>
             <h3>Esports Broadcaster</h3>
             <h4>2013 - 2017</h4>
             <p>
-                Intensive full-time software development bootcamp focusing on full stack development fundamentals and problem solving with the final half of the program being executed in a simulated company environment with Scrum methodology. 
+                Play-by-Play commentary of StarCraft 2 events.  Cheeseadelphia 2, Cheeseadelphia 3, and Cheeseadelphia 4 for NerdStreetGamers, Philadelphia, PA; and PSISTORM Cup #3 & PSISTORM Cup #4 for PSISTORM Gaming, Fairfax, VA
             </p>
           </article>  
         </div>

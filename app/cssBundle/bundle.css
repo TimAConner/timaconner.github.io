@@ -4706,7 +4706,7 @@ footer {
 
 .about-grid img {
   width: 50%;
-  border-radius: 15%;
+  border-radius: 20%;
   padding: 1em;
 }
 
@@ -4835,9 +4835,9 @@ footer {
     display: none;
   }
 
-  main {
-    margin-right: 5em !important;
-    margin-left: 5em !important;
+  body main {
+    margin-right: 5em;
+    margin-left: 5em;
   }
 
   nav .menu-button {
@@ -4863,7 +4863,8 @@ footer {
 
   .about-grid {
     display: grid;
-    grid-template-areas: "picture about contact";
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "picture contact" "about about";
   }
 
   .about-grid img {
@@ -4881,6 +4882,8 @@ footer {
   .about-grid .body-contact {
     display: block;
     grid-area: contact;
+    justify-self: center;
+    align-self: center;
   }
 
   .about-grid .body-contact ul {
@@ -5004,14 +5007,39 @@ footer {
 }
 
 @media (min-width: 900px) {
+  .about-grid img {
+    width: 70%;
+    border-radius: 20%;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr 4fr 2fr;
+    grid-template-areas: "picture about contact";
+  }
+
   .menu .links {
     width: 100%;
   }
 }
 
 @media (min-width: 1000px) {
-  main {
-    margin-right: 8em;
-    margin-left: 8em;
+  .about-grid .body-contact {
+    align-self: baseline;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr 4fr 1.5fr;
+    grid-template-areas: "picture about contact";
+  }
+
+  .projects {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  body main {
+    margin-right: 10em;
+    margin-left: 10em;
   }
 }

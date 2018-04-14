@@ -17,12 +17,25 @@
         toggleMobileMenu();
     });
 
+    // Let's menu buttons scroll down to div they are referencing
     [...menuButtons].forEach(button => {
         button.addEventListener('click', function (event) {
+            // console.log('hey');
+            event.preventDefault();
+
             // Remove # from beginning of string
             const targetDiv = event.target.getAttribute("href").substring(1);
             if (targetDiv !== null) {
-                document.getElementById(targetDiv).scrollIntoView();
+                document.getElementById(targetDiv).scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start',
+                  },);
+
+                //   let currentY = window.scrollY;
+                //   let desktopMenuHeight = 10;
+                  
+                //   // To offset fixed desktop menu
+                //   window.scroll(0, currentY - desktopMenuHeight);
             }
         });
     });

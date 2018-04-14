@@ -20,6 +20,8 @@ $background-color: #f9f9f9;
 $desktop-margin: 5em;
 $large-desktop-margin: 10em;
 
+$desktop-menu-height: 3.5em;
+
 
 body {
     background-color: $background-color;
@@ -339,6 +341,11 @@ footer {
         main {
             margin-right: $desktop-margin;
             margin-left: $desktop-margin;
+
+            & > section {
+
+                padding-top: $desktop-menu-height - 1.5em;
+            }
         }
     }
 
@@ -480,7 +487,7 @@ footer {
         display: grid;
         grid-template-areas: ". links . ";
         position: fixed;
-        height: 3.5em;
+        height: $desktop-menu-height;
         top: 0px; // required as well.
         left: 0px;
         width: 100%;

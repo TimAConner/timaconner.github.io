@@ -212,6 +212,8 @@ footer {
   body main {
     margin-right: 5em;
     margin-left: 5em; }
+    body main > section {
+      padding-top: 2em; }
   nav .menu-button {
     font-size: 1em !important; }
   .nav-contact {

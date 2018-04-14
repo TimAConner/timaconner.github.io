@@ -4669,6 +4669,10 @@ section .skills .programming {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+section .skills .databases {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 section .skills .version-control,
 section .skills .task-automation {
   grid-template-columns: 1fr 1fr;
@@ -4823,6 +4827,10 @@ footer {
 }
 
 @media (min-width: 700px) {
+  section .skills .databases {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .projects .tech-used {
     text-align-last: left !important;
   }
@@ -4942,13 +4950,21 @@ footer {
   .skills-grid {
     justify-items: center;
     align-items: top;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     display: grid;
-    grid-template-areas: "programming-header version-header task-header" "programming  version-control task-automation";
+    grid-template-areas: "programming-header databases-header version-header task-header" "programming databases version-control task-automation";
   }
 
   .skills-grid .programming-header {
     grid-area: programming-header;
+  }
+
+  .skills-grid .task-headers {
+    grid-area: task-header;
+  }
+
+  .skills-grid .databases-headers {
+    grid-area: databases-header;
   }
 
   .skills-grid .task-headers {
@@ -4961,6 +4977,10 @@ footer {
 
   .skills-grid .programming {
     grid-area: programming;
+  }
+
+  .skills-grid .databases {
+    grid-area: databases;
   }
 
   .skills-grid .version-control {

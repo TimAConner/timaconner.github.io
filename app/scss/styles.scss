@@ -155,8 +155,12 @@ section {
             grid-template-columns: 1fr 1fr 1fr 1fr;
         }
 
+        .databases {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
         .version-control,
-        .task-automation {
+        .task-automation{
             grid-template-columns: 1fr 1fr;
         }
     }
@@ -324,6 +328,14 @@ footer {
 
 @media (min-width: 700px) {
 
+    section {
+        .skills {
+            .databases {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+
     .projects {
         .tech-used {
             text-align-last: left !important;
@@ -448,18 +460,24 @@ footer {
     .skills-grid {
         justify-items: center;
         align-items: top;
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
 
         display: grid;
 
         grid-template-areas: 
-            "programming-header version-header task-header"
-            "programming  version-control task-automation";
+            "programming-header databases-header version-header task-header"
+            "programming databases version-control task-automation";
 
         // To reorganize DOM order
         // Column headers
         .programming-header {
             grid-area: programming-header;
+        }
+        .task-headers {
+            grid-area: task-header;
+        }
+        .databases-headers {
+            grid-area: databases-header;
         }
         .task-headers {
             grid-area: task-header;
@@ -472,6 +490,9 @@ footer {
         // Column bodies
         .programming {
             grid-area: programming;
+        }
+        .databases {
+            grid-area: databases;
         }
         .version-control {
             grid-area: version-control;

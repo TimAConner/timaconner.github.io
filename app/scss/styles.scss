@@ -57,6 +57,10 @@ body {
     cursor: pointer; 
 }
 
+html, body {
+    touch-action: auto;
+}
+
 section {
     h2 {
         text-transform: uppercase;

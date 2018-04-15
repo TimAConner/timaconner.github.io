@@ -18,6 +18,9 @@ body {
 .clickable {
   cursor: pointer; }
 
+html, body {
+  touch-action: auto; }
+
 section {
   padding-top: 1em;
   padding-bottom: 1em; }

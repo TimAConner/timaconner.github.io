@@ -1,6 +1,9 @@
 'use strict';
 // Activates the mobile menu button
 (() => {
+
+    // To set if touch or click that is being listened to
+    const clickEvent = document.ontouchstart !== null  ? 'click' : 'touchstart';
     const mobileMenuBurger = document.querySelector('#mobile-menu-burger');
     const menu = document.querySelector('#menu');
     const menuButtons = document.querySelectorAll('.menu-button');
@@ -13,13 +16,13 @@
 
     let isMobileMenuOpen = false;
 
-    mobileMenuBurger.addEventListener('click', () => {
+    mobileMenuBurger.addEventListener(clickEvent, () => {
         toggleMobileMenu();
     });
 
     // Let's menu buttons scroll down to div they are referencing
     [...menuButtons].forEach(button => {
-        button.addEventListener('click', function (event) {
+        button.addEventListener(clickEvent, function (event) {
             // console.log('hey');
             event.preventDefault();
 
@@ -41,7 +44,7 @@
     });
 
     // A click not on menu burger
-    document.querySelectorAll('body')[0].addEventListener('click', function (event) {
+    document.querySelectorAll('body')[0].addEventListener(clickEvent, function (event) {
         if (isMobileMenuOpen && !event.target.classList.contains('mobileMenuBurgerButton')) {
             toggleMobileMenu();
         }

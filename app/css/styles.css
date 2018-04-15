@@ -1,0 +1,348 @@
+body {
+  background-color: #f9f9f9;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #343a40; }
+  body main {
+    margin: 0 1em; }
+    body main .body-contact {
+      display: none; }
+    body main section {
+      border-bottom: 1px solid rgba(52, 58, 64, 0.99); }
+      body main section:last-child {
+        border-bottom: 0px; }
+  body i {
+    font-family: 'Font Awesome 5'; }
+  body p {
+    line-height: 1.25em; }
+
+section {
+  padding-top: 1em;
+  padding-bottom: 1em; }
+  section h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    margin-top: 1em;
+    margin-bottom: 0.5em; }
+  section article {
+    padding-top: 1em;
+    padding-bottom: 1em; }
+  section .projects h3 {
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 1em; }
+  section .projects .tech-used {
+    font-style: italic;
+    width: 80%;
+    text-align: justify;
+    text-align-last: justify;
+    margin-top: 0.6em;
+    padding-left: 0.5em;
+    font-size: 0.9rem; }
+  section .projects .tech-used-single-line {
+    font-style: italic;
+    text-align: center;
+    margin-top: 0.6em;
+    font-size: 0.9rem; }
+  section .projects .link-grid {
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    section .projects .link-grid a {
+      cursor: pointer;
+      color: #343a40;
+      text-decoration: none; }
+      section .projects .link-grid a i {
+        margin-right: 0.25em; }
+  section .jobs h3,
+  section .skills h3 {
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: black; }
+  section .skills h4 {
+    margin-top: 1em; }
+  section .skills {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 0.5px solid rgba(52, 58, 64, 0.99); }
+    section .skills ul {
+      display: grid;
+      justify-items: center; }
+      section .skills ul li {
+        text-align: center;
+        font-size: 2.5em; }
+      section .skills ul img {
+        object-fit: cover;
+        width: 35%; }
+        section .skills ul img.unity {
+          width: 65%; }
+    section .skills .programming {
+      grid-template-columns: 1fr 1fr 1fr 1fr; }
+    section .skills .databases {
+      grid-template-columns: 1fr 1fr 1fr; }
+    section .skills .version-control,
+    section .skills .task-automation {
+      grid-template-columns: 1fr 1fr; }
+  section h4 {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 1em;
+    line-height: 1.5em; }
+
+footer {
+  padding: 1em;
+  font-size: 0.75em; }
+
+.my-name {
+  font-size: 3em;
+  margin-top: 1.5em;
+  color: black; }
+
+.my-title {
+  font-size: 1.5em;
+  font-style: italic;
+  margin-bottom: 1em;
+  margin-top: 0.5em; }
+
+.about-grid p {
+  margin: 0 1em; }
+
+.about-grid img {
+  width: 50%;
+  border-radius: 20%;
+  padding: 1em; }
+
+.center {
+  text-align: center; }
+
+.margin-top {
+  margin-top: 1em; }
+
+.social-link-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center; }
+
+.social-link {
+  text-decoration: none;
+  color: black;
+  font-size: 3em;
+  display: inline-block; }
+
+.mobile-burger-container {
+  position: fixed;
+  right: 1em;
+  top: 1em;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 2;
+  border: 1px solid rgba(52, 58, 64, 0.99);
+  padding: 0.25em;
+  border-radius: 0.25em; }
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: rgba(52, 58, 64, 0.99);
+  margin: 6px 0;
+  transition: 0.4s; }
+
+.x-burger .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px); }
+
+.x-burger .bar2 {
+  opacity: 0; }
+
+.x-burger .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px); }
+
+.mobile-menu-size {
+  height: 100vh;
+  width: 60vw; }
+
+.pull-out-mobile-menu {
+  top: 0;
+  transform: translate(500px, 0);
+  background: rgba(52, 58, 64, 0.99); }
+
+.menu {
+  transition: all 1s ease-in-out;
+  position: fixed;
+  left: -500px;
+  top: 0;
+  z-index: 1; }
+  .menu .horizontal-line {
+    padding-top: 1em; }
+  .menu li {
+    margin-top: 1em; }
+    .menu li h2 {
+      color: black;
+      font-size: 2.5em; }
+    .menu li a {
+      color: #f9f9f9 !important;
+      margin-left: 1em;
+      text-transform: uppercase;
+      color: black;
+      text-decoration: none;
+      font-size: 2em; }
+      .menu li a.social-link {
+        margin-left: 0; }
+
+.jobs p {
+  width: 90%;
+  margin: 0 auto; }
+
+footer {
+  border-top: 1px solid rgba(52, 58, 64, 0.99); }
+
+@media (min-width: 700px) {
+  section .skills .databases {
+    grid-template-columns: 1fr 1fr; }
+  .projects .tech-used {
+    text-align-last: left !important; }
+  .projects .link-grid {
+    margin-top: 0.75em; }
+  .mobile-social-link {
+    display: none; }
+  body main {
+    margin-right: 5em;
+    margin-left: 5em; }
+    body main > section {
+      padding-top: 2em; }
+  nav .menu-button {
+    font-size: 1em !important; }
+  .nav-contact {
+    display: none; }
+  #mobile-menu-burger {
+    display: none; }
+  .social-link-menu {
+    margin-top: 0em;
+    grid-area: contact; }
+    .social-link-menu .social-link {
+      padding-left: 1em; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "picture contact" "about about"; }
+    .about-grid img {
+      width: 50%; }
+    .about-grid .img {
+      grid-area: picture; }
+    .about-grid .about {
+      grid-area: about; }
+    .about-grid .body-contact {
+      display: block;
+      grid-area: contact;
+      justify-self: center;
+      align-self: center; }
+      .about-grid .body-contact ul {
+        grid-template-columns: 0;
+        grid-template-rows: 1fr 1fr 1fr; }
+        .about-grid .body-contact ul li {
+          margin-bottom: 1em; }
+          .about-grid .body-contact ul li a {
+            font-size: 1.25em; }
+            .about-grid .body-contact ul li a i {
+              display: inline; }
+  .my-name {
+    margin-top: 1.5em; }
+  section h2 {
+    font-size: 1.75em; }
+  section .projects h3 {
+    font-size: 1em; }
+  section .jobs h3,
+  section .skills h3 {
+    font-size: 1em; }
+  .projects,
+  .jobs,
+  .skills-grid {
+    display: grid;
+    grid-gap: 2.25em; }
+  .projects {
+    grid-template-columns: 1fr 1fr; }
+  .jobs {
+    grid-template-columns: 1fr 1fr; }
+  .skills-grid {
+    justify-items: center;
+    align-items: top;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    display: grid;
+    grid-template-areas: "programming-header databases-header version-header task-header" "programming databases version-control task-automation"; }
+    .skills-grid .programming-header {
+      grid-area: programming-header; }
+    .skills-grid .task-headers {
+      grid-area: task-header; }
+    .skills-grid .databases-headers {
+      grid-area: databases-header; }
+    .skills-grid .task-headers {
+      grid-area: task-header; }
+    .skills-grid .version-header {
+      grid-area: version-header; }
+    .skills-grid .programming {
+      grid-area: programming; }
+    .skills-grid .databases {
+      grid-area: databases; }
+    .skills-grid .version-control {
+      grid-area: version-control; }
+    .skills-grid .task-automation {
+      grid-area: task-automation; }
+  .menu {
+    background-color: rgba(52, 58, 64, 0.99);
+    display: grid;
+    grid-template-areas: ". links . ";
+    position: fixed;
+    height: 3.5em;
+    top: 0px;
+    left: 0px;
+    width: 100%; }
+    .menu .logo {
+      display: grid;
+      justify-items: center;
+      align-items: center; }
+    .menu li {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 0; }
+      .menu li a {
+        color: #f9f9f9;
+        margin-left: 0; }
+    .menu .links {
+      grid-area: links;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      justify-items: center;
+      align-items: center;
+      width: 75%;
+      margin: 0 auto; } }
+
+@media (min-width: 900px) {
+  .about-grid img {
+    width: 70%;
+    border-radius: 20%; }
+  .about-grid {
+    grid-template-columns: 1fr 4fr 2fr;
+    grid-template-areas: "picture about contact"; }
+  .menu .links {
+    width: 100%; } }
+
+@media (min-width: 1000px) {
+  .about-grid .body-contact {
+    align-self: baseline; }
+  .about-grid {
+    grid-template-columns: 1fr 4fr 1.5fr;
+    grid-template-areas: "picture about contact"; }
+  .projects {
+    grid-template-columns: 1fr 1fr 1fr; } }
+
+@media (min-width: 1200px) {
+  body main {
+    margin-right: 10em;
+    margin-left: 10em; } }

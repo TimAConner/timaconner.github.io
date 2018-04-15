@@ -1,9 +1,0 @@
-{
-    "projects" : [
-        {
-            "name" : "Discombobulated Chat",
-            "description" : "A simple chatroom that can be logged into through your Gmail account.",
-            "link" : "https://github.com/nss-day-cohort-23/group-project-chatty-jjt"
-        }
-    ]
-}

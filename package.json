@@ -1,10 +1,21 @@
 {
   "name": "timaconner.github.io",
   "version": "1.0.0",
-  "description": "This is a personal site made while at NSS.\r ## Motivation\r This site was made to practice HTML, CSS, and Javascript.",
+  "description": "",
   "main": "index.js",
+  "dependencies": {
+    "devicons": "^1.8.0",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "devDependencies": {
+    "gulp-concat-css": "^3.1.0",
+    "node-font-awesome": "^1.0.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",
@@ -16,13 +27,5 @@
   "bugs": {
     "url": "https://github.com/TimAConner/timaconner.github.io/issues"
   },
-  "homepage": "https://github.com/TimAConner/timaconner.github.io#readme",
-  "dependencies": {
-    "grunt": "^1.0.1",
-    "grunt-browserify": "^5.2.0",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "matchdep": "^2.0.0"
-  }
+  "homepage": "https://github.com/TimAConner/timaconner.github.io#readme"
 }

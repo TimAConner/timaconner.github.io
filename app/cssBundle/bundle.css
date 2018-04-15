@@ -4567,6 +4567,10 @@ body p {
   line-height: 1.25em;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 section {
   padding-top: 1em;
   padding-bottom: 1em;

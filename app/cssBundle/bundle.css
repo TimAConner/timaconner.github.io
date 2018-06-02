@@ -4743,6 +4743,11 @@ footer {
   color: black;
   font-size: 3em;
   display: inline-block;
+  transition: color 100ms linear;
+}
+
+.social-link:hover {
+  color: rgba(54, 60, 66, 0.76);
 }
 
 .mobile-burger-container {
@@ -4829,6 +4834,33 @@ footer {
 .jobs p {
   width: 90%;
   margin: 0 auto;
+}
+
+.overflow-hidden {
+  display: none;
+}
+
+.show-overflow {
+  border-radius: 1em;
+  width: 50%;
+  text-align: center;
+  background-color: rgba(52, 58, 64, 0.99);
+  color: #f9f9f9;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: background-color 150ms linear;
+}
+
+.show-overflow:hover {
+  background-color: rgba(54, 60, 66, 0.76);
+}
+
+.projects .link-grid a {
+  transition: color 100ms linear;
+}
+
+.projects .link-grid a:hover {
+  color: rgba(54, 60, 66, 0.76);
 }
 
 footer {

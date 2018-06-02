@@ -4836,11 +4836,25 @@ footer {
   margin: 0 auto;
 }
 
-.overflow-hidden {
-  display: none;
+.overflow {
+  transition: max-height 1s, height 1s, opacity 0.25s linear;
+  max-height: 100em;
+  height: 18em;
 }
 
-.show-overflow {
+.overflow.hidden {
+  max-height: 0em;
+  opacity: 0;
+  height: 0;
+}
+
+.overflow.hidden > * {
+  z-index: -1;
+  max-height: 0em;
+  height: 0;
+}
+
+.overflow-toggle {
   border-radius: 1em;
   width: 50%;
   text-align: center;
@@ -4851,7 +4865,7 @@ footer {
   transition: background-color 150ms linear;
 }
 
-.show-overflow:hover {
+.overflow-toggle:hover {
   background-color: rgba(54, 60, 66, 0.76);
 }
 

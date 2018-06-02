@@ -24,7 +24,7 @@ $desktop-menu-height: 3.5em;
 
 @mixin hover() {
     transition: color 100ms linear;
-    &:hover {
+    &:hover {   
         color: rgba(54, 60, 66, 0.76);
     }
 }
@@ -326,11 +326,24 @@ footer {
     }
 }
 
-.overflow-hidden {
-    display: none;
+// TODO: Put show menu button ontop of rest other projects.
+.overflow {
+    transition:  max-height 1s, height 1s, opacity 0.25s linear;
+    max-height: 100em;
+    height: 18em;
+    &.hidden {
+        max-height: 0em;
+        opacity: 0;
+        height: 0;
+         & > * {
+             z-index: -1;
+             max-height: 0em;
+             height: 0;
+         }
+    }
 }
 
-.show-overflow {
+.overflow-toggle {
     border-radius: 1em;
     width: 50%;
     text-align: center;

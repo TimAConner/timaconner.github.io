@@ -18,6 +18,12 @@
 
     const toggleShowMore = () => {
         overflow.classList.toggle('hidden');
+        console.log(toggleOverflowButton.textContent);
+        if(toggleOverflowButton.textContent === 'Show More'){
+            toggleOverflowButton.textContent = 'Show Less';
+            return;
+        }
+        toggleOverflowButton.textContent = 'Show More';
     };
 
     let isMobileMenuOpen = false;

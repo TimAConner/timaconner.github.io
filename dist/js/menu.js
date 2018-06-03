@@ -7,6 +7,8 @@
     const mobileMenuBurger = document.querySelector('#mobile-menu-burger');
     const menu = document.querySelector('#menu');
     const menuButtons = document.querySelectorAll('.menu-button');
+    const toggleOverflowButton = document.querySelector('#toggleOverflow');
+    const overflow = document.querySelector('.overflow');
 
     const toggleMobileMenu = () => {
         isMobileMenuOpen = !isMobileMenuOpen;
@@ -14,10 +16,24 @@
         menu.classList.toggle('pull-out-mobile-menu');
     };
 
+    const toggleShowMore = () => {
+        overflow.classList.toggle('hidden');
+        console.log(toggleOverflowButton.textContent);
+        if(toggleOverflowButton.textContent === 'Show More'){
+            toggleOverflowButton.textContent = 'Show Less';
+            return;
+        }
+        toggleOverflowButton.textContent = 'Show More';
+    };
+
     let isMobileMenuOpen = false;
 
     mobileMenuBurger.addEventListener(clickEvent, () => {
         toggleMobileMenu();
+    });
+
+    toggleOverflowButton.addEventListener(clickEvent, () => {
+        toggleShowMore();
     });
 
     // Let's menu buttons scroll down to div they are referencing

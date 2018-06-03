@@ -4743,6 +4743,11 @@ footer {
   color: black;
   font-size: 3em;
   display: inline-block;
+  transition: color 100ms linear;
+}
+
+.social-link:hover {
+  color: rgba(54, 60, 66, 0.76);
 }
 
 .mobile-burger-container {
@@ -4751,7 +4756,7 @@ footer {
   top: 1em;
   display: inline-block;
   cursor: pointer;
-  z-index: 2;
+  z-index: 3;
   border: 1px solid rgba(52, 58, 64, 0.99);
   padding: 0.25em;
   border-radius: 0.25em;
@@ -4797,7 +4802,7 @@ footer {
   position: fixed;
   left: -500px;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .menu .horizontal-line {
@@ -4829,6 +4834,48 @@ footer {
 .jobs p {
   width: 90%;
   margin: 0 auto;
+}
+
+.overflow {
+  transition: max-height 0.5s, opacity 0.5s linear;
+  max-height: 100em;
+}
+
+.overflow,
+.overflow * {
+  z-index: 0;
+  position: relative;
+}
+
+.overflow.hidden {
+  max-height: 0.1em;
+  opacity: 0;
+}
+
+.overflow-toggle {
+  z-index: 1;
+  position: relative;
+  padding: 0.25em;
+  border-radius: 1em;
+  width: 50%;
+  text-align: center;
+  background-color: rgba(52, 58, 64, 0.99);
+  color: #f9f9f9;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: background-color 150ms linear;
+}
+
+.overflow-toggle:hover {
+  background-color: rgba(54, 60, 66, 0.76);
+}
+
+.projects .link-grid a {
+  transition: color 100ms linear;
+}
+
+.projects .link-grid a:hover {
+  color: rgba(54, 60, 66, 0.76);
 }
 
 footer {

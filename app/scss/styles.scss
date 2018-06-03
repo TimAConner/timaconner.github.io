@@ -22,6 +22,8 @@ $large-desktop-margin: 10em;
 
 $desktop-menu-height: 3.5em;
 
+$overflow-max-height: 32em;
+
 @mixin hover() {
     transition: color 100ms linear;
     &:hover {   
@@ -246,7 +248,7 @@ footer {
     top: 1em;
     display: inline-block;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
 
     border: $divider-width solid $hamburger-color;
     padding: 0.25em;
@@ -289,7 +291,7 @@ footer {
     position: fixed;
     left: -500px;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 
     .horizontal-line {
         padding-top: 1em;   
@@ -328,22 +330,29 @@ footer {
 
 // TODO: Put show menu button ontop of rest other projects.
 .overflow {
-    transition:  max-height 1s, height 1s, opacity 0.25s linear;
+
+    // To force it below the show projects button
+    &, & * {
+        z-index: 0;
+        position: relative;
+    }
+
+    transition: max-height 0.5s, opacity 0.5s linear;
     max-height: 100em;
-    height: 18em;
+    // height: $overflow-max-height;
     &.hidden {
-        max-height: 0em;
+        max-height: 0.1em;
         opacity: 0;
-        height: 0;
-         & > * {
-             z-index: -1;
-             max-height: 0em;
-             height: 0;
-         }
+        // height: 0;
     }
 }
 
 .overflow-toggle {
+    // To keep it above the hidden projects
+    z-index: 1;
+    position: relative;
+
+    padding: 0.25em;
     border-radius: 1em;
     width: 50%;
     text-align: center;
@@ -366,13 +375,9 @@ footer {
     }
 }
 
-
-
-
 footer {
     border-top: 1px solid $divider-border-color;
 }
-
 
 @media (min-width: 700px) {
 

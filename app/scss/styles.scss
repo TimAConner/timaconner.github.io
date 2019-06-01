@@ -1,8 +1,10 @@
 
 // $menu-backroud-color: rgba(105, 105, 105, 0.95);
-$menu-backroud-color: rgba(52,58,64, 0.99);
+$menu-backroud-color: #8e9b45;
+$button-background-color: #838f40;
+$button-highlight-color: #434921;
 $divider-border-color: rgba(52,58,64, 0.99);
-$hamburger-color: rgba(52,58,64, 0.99);
+$hamburger-color: #838f40;
 
 $img-size-breakpoint1: 35%;
 $img-size-breakpoint2: 50%;
@@ -14,27 +16,57 @@ $divider-width-thin: 0.5px;
 
 $main-text-color: #343a40;
 $header-text-color: black;
-$highlight-color: cyan;
-$background-color: #f9f9f9;
+$highlight-color: #a3b151;
+$background-color: white;
 
-$desktop-margin: 5em;
-$large-desktop-margin: 10em;
+// $desktop-margin: 5em;
+// $medium-desktop-margin: 15em;
+// $large-desktop-margin: 23em;
+// $massive-desktop-margin: 35em;
 
 $desktop-menu-height: 3.5em;
 
 $overflow-max-height: 32em;
 
-@mixin hover() {
+@mixin hover($color: rgba(54, 60, 66, 0.76)) {
     transition: color 100ms linear;
     &:hover {   
-        color: rgba(54, 60, 66, 0.76);
+        color: $color;
     }
 }
 
+// @mixin fade($type) {
+
+//     @if $type == 'hide' {
+//       visibility: hidden;
+//       opacity: 0;
+//       transition: visibility 1s, opacity 1s;
+//     }
+  
+//     @else if $type == 'show' {
+//       visibility: visible;
+//       opacity: 1;
+//       transition: visibility 1s, opacity 1s;
+//     }
+  
+//   }
+
+
 body {
     background-color: $background-color;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Helvetica','Source Sans Pro', sans-serif;
     color: $main-text-color;
+
+    margin: 0 auto;
+    max-width: 45em;
+    padding: 4em 1em 0;
+    color: #555;
+
+    h1,
+    h2,
+    strong {
+        color: #333;
+    }
 
     main {
         .body-contact {
@@ -44,7 +76,7 @@ body {
         margin: 0 1em;
 
         section { 
-            border-bottom: $divider-width solid $divider-border-color;
+            // border-bottom: $divider-width solid $divider-border-color;
 
             &:last-child{
                 border-bottom: 0px;
@@ -57,7 +89,7 @@ body {
     }
 
     p {
-        line-height: 1.25em;
+        line-height: 1.5em;
     }
 }
 
@@ -71,7 +103,6 @@ html, body {
 
 section {
     h2 {
-        text-transform: uppercase;
         font-size: 2em;
         font-weight: bold;
         color: $header-text-color;
@@ -79,18 +110,25 @@ section {
         margin-bottom: 0.5em;
     }
 
-    padding-top: 1em;
-    padding-bottom: 1em;
+    &#about-section {
+        h2 {
+            display: none;
+        }
+    }
+
+    // padding-top: 1em;
+    // padding-bottom: 1em;
 
     article {
-        padding-top: 1em;
-        padding-bottom: 1em;
+        background-color: #f5f7f9;
+        margin-bottom: 1em;
+        padding: 1em;
+        border-left: 2px solid $highlight-color;
     }
 
 
     .projects {
         h3 {
-            text-transform: uppercase;
             font-size: 1.25em;
             font-weight: bold;
             color: $header-text-color;
@@ -116,9 +154,9 @@ section {
         .link-grid {
             margin-top: 0.5em;
             
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+            display: grid;
+            // justify-content: space-around;
+            // align-items: center;
 
             
             a {
@@ -126,6 +164,7 @@ section {
                 i {
                     margin-right: 0.25em;
                 }   
+                margin-bottom: 0.25em;
                 color: #343a40;
                 text-decoration: none;
             }
@@ -134,38 +173,92 @@ section {
 
     .jobs h3,
     .skills h3 {
-        text-transform: uppercase;
         font-size: 1.25em;
         font-weight: bold;
         color: $header-text-color;
+    }
+    
+    .jobs h5 {
+        margin-bottom: 1.25em;
+        font-size: 0.75em;
     }
 
     .skills h4 {
         margin-top: 1em;
     }
 
-    .skills {
+    &#skills-section {
+        margin-top: 2em;
         margin-bottom: 1em;
         padding-bottom: 1em;
-        border-bottom: $divider-width-thin solid $divider-border-color;
-        
-        ul {       
+        // border-bottom: $divider-width-thin solid $divider-border-color;
+
+        .skill-header {
+            font-weight: bold;
+        }
+
+        h3 {
+            font-weight: bold;
+            margin-bottom: 1em;
+            font-size: 1.25em;
+        }
+
+        #skills-columns {
             display: grid;
-            justify-items: center;
-            
-            li {
-                text-align: center;
-                font-size: 2.5em;
+            grid-gap: 1em;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            ul li:first-child {
+                font-weight: bold;
+                margin-bottom: 0.5em;
+            }
+            ul li:not(:first-child) {
+                font-size: 1em;
+                margin-bottom: 0.4em;
+            }
+            li.package {
+                margin-left: 1em;
+            }
+        }
+
+        ul {
+            background-color: #f5f7f9;
+            margin-bottom: 1em;
+            padding: 1em;
+            border-left: 2px solid $highlight-color;
+        }
+
+        // li, ul {
+        //     &:after {
+        //         content: ", ";
+        //     }
+        
+        //     &:last-child:after {
+        //         content: "";
+        //     }
+        // }
+ 
+        
+        ul {
+            // padding-left: 1em;
+            // list-style: disc;
+
+            &#skills-list {
+                columns: 2;
             }
 
-            img {
-                object-fit: cover;
-                width: $img-size-breakpoint1;
-                &.unity {
-                    width: 65%;
+            ul {
+                margin-bottom: 1em;
+                // list-style: none;
+                // padding-left: 0.5em;
+
+                ul {
+                    margin-bottom: 1em;
+                    // list-style: none;
                 }
             }
         }
+
         .programming {
             grid-template-columns: 1fr 1fr 1fr 1fr;
         }
@@ -182,21 +275,21 @@ section {
 
     h4 {
         font-size: 0.9em;
-        text-transform: uppercase;
         color: $header-text-color;
-        margin-bottom: 1em;
+        // margin-bottom: 1em;
         line-height: 1.5em;
     }
 }
 
 footer {
+    margin-top: 3em;
     padding: 1em;
     font-size: 0.75em;
 }
 
 .my-name {
     font-size: 3em;
-    margin-top: 1.5em;
+    margin-top: 1em;
     color: $header-text-color;
 }
 .my-title {
@@ -212,9 +305,11 @@ footer {
     }
     img {
         width: $img-size-breakpoint2;
-        border-radius: 20%;
-        padding: 1em;
+        border-radius: 50%;
+        padding-right: 1em;
+        padding-left: 1em;
         margin-bottom: 1em;
+        margin-top: 2em;
     }
 }
 
@@ -236,10 +331,13 @@ footer {
 
 .social-link {
     text-decoration: none;
-    color: black;
+    color: #838f40;
     font-size: 3em;
     display: inline-block;
-    @include hover();
+    // @include hover();
+    & .fab, & .fas {
+        @include hover($highlight-color);
+    }
 }
 
 .mobile-burger-container {
@@ -311,10 +409,9 @@ footer {
                 margin-left: 0;
             }
 
-            color: $menu-font-color !important;
+            color: $menu-font-color;
             margin-left: 1em;
-            text-transform: uppercase;
-            color: $header-text-color;
+            // color: $header-text-color;
             text-decoration: none;
             font-size: 2em;
         }
@@ -323,13 +420,14 @@ footer {
 
 .jobs {
     p {
-        width: 90%;
+        // width: 90%;
         margin: 0 auto;
     }
 }
 
 // TODO: Put show menu button ontop of rest other projects.
-.overflow {
+.jobOverflow,
+.projectOverflow {
 
     // To force it below the show projects button
     &, & * {
@@ -343,6 +441,7 @@ footer {
     &.hidden {
         max-height: 0.1em;
         opacity: 0;
+        display: none;
         // height: 0;
     }
 }
@@ -356,14 +455,16 @@ footer {
     border-radius: 1em;
     width: 50%;
     text-align: center;
-    background-color: $menu-backroud-color;
+    background-color: $button-background-color;
     color: $menu-font-color;
     margin: 0 auto;
     cursor: pointer;
 
+    margin-bottom: 3em;
+
     transition: background-color 150ms linear;
     &:hover {
-        background-color: rgba(54, 60, 66, 0.76);
+        background-color: $button-highlight-color;
     }
 }
 
@@ -389,6 +490,18 @@ footer {
         }
     }
 
+    #skills-section{
+        #skills-columns {
+            grid-template-columns: 1fr 1fr 1fr 1fr !important;
+            grid-template-rows: 1fr !important;
+            ul li:not(:first-child) {
+                font-size: 0.8em !important;
+            }
+        }
+    }
+
+    
+
     .projects {
         .tech-used {
             text-align-last: left !important;
@@ -404,12 +517,12 @@ footer {
 
     body{
         main {
-            margin-right: $desktop-margin;
-            margin-left: $desktop-margin;
+            // margin-right: $desktop-margin;
+            // margin-left: $desktop-margin;
 
             & > section {
 
-                padding-top: $desktop-menu-height - 1.5em;
+                // padding-top: $desktop-menu-height - 1.5em;
             }
         }
     }
@@ -417,6 +530,7 @@ footer {
     nav {
         .menu-button {
             font-size: 1em !important;
+            @include hover($highlight-color);
         }
     }
 
@@ -438,11 +552,11 @@ footer {
     
     .about-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "picture contact"
-        "about about";
+        grid-template-columns: 1.5fr 5fr;
+        grid-template-areas: "picture about";
 
         img {
+            margin-top: 0em;
             width: $img-size-breakpoint2;
         }
         .img {
@@ -452,31 +566,13 @@ footer {
             grid-area: about;
         }
         .body-contact {
-            display: block;
-            grid-area: contact;
-
-            justify-self: center;
-            align-self: center;
-
-            ul {
-                grid-template-columns: 0;
-                grid-template-rows: 1fr 1fr 1fr;
-                li {
-                    margin-bottom: 1em;
-                    a {
-                        font-size: 1.25em;
-                        i {
-                            display: inline;
-                        }
-                    }
-                }
-            }
+            display: none;
         }
     }
 
 
     .my-name {
-        margin-top: 1.5em;
+        margin-top: 1em;
     }
 
 
@@ -501,13 +597,13 @@ footer {
     .jobs,
     .skills-grid {
         display: grid;
-        grid-gap: 2.25em;
     }
     .projects {
         grid-template-columns: 1fr 1fr;
+        column-gap: 1em;
     }
     .jobs {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         
     }
     .skills-grid {
@@ -586,7 +682,7 @@ footer {
         .links {
             grid-area: links;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
             justify-items: center;
             align-items: center;
             width: 75%;
@@ -596,21 +692,27 @@ footer {
 }
 
 @media (min-width: 900px) {
-    .about-grid {
-        img {
-            width: $img-size-breakpoint3;
-            border-radius: 20%;
+    body {
+        main {
+            // margin-right: $medium-desktop-margin;
+            // margin-left: $medium-desktop-margin;
         }
     }
 
     .about-grid {
-        grid-template-columns: 1fr 4fr 2fr;
-        grid-template-areas: "picture about contact";
+        img {
+            width: $img-size-breakpoint3;
+        }
+    }
+
+    .about-grid {
+        grid-template-columns: 1.5fr 5fr;
+        grid-template-areas: "picture about";
     }
     
     .menu {
         .links {
-            width: 100%;
+            width: 55%;
         }
     }
 }
@@ -622,20 +724,25 @@ footer {
         }
     }
 
-    .about-grid {
-        grid-template-columns: 1fr 4fr 1.5fr;
-        grid-template-areas: "picture about contact";
-    }
     .projects {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 };
 
 @media (min-width: 1200px) {
     body {
         main {
-            margin-right: $large-desktop-margin;
-            margin-left: $large-desktop-margin;
+            // margin-right: $large-desktop-margin;
+            // margin-left: $large-desktop-margin;
         }
     }
 }
+
+// @media (min-width: 1600px) {
+//     body {
+//         main {
+//             margin-right: $massive-desktop-margin;
+//             margin-left: $massive-desktop-margin;
+//         }
+//     }
+// }

@@ -4538,9 +4538,19 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 body {
-  background-color: #f9f9f9;
-  font-family: 'Source Sans Pro', sans-serif;
+  background-color: white;
+  font-family: 'Helvetica','Source Sans Pro', sans-serif;
   color: #343a40;
+  margin: 0 auto;
+  max-width: 45em;
+  padding: 4em 1em 0;
+  color: #555;
+}
+
+body h1,
+body h2,
+body strong {
+  color: #333;
 }
 
 body main {
@@ -4549,10 +4559,6 @@ body main {
 
 body main .body-contact {
   display: none;
-}
-
-body main section {
-  border-bottom: 1px solid rgba(52, 58, 64, 0.99);
 }
 
 body main section:last-child {
@@ -4564,7 +4570,7 @@ body i {
 }
 
 body p {
-  line-height: 1.25em;
+  line-height: 1.5em;
 }
 
 .clickable {
@@ -4576,13 +4582,7 @@ body {
   touch-action: auto;
 }
 
-section {
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
 section h2 {
-  text-transform: uppercase;
   font-size: 2em;
   font-weight: bold;
   color: black;
@@ -4590,13 +4590,18 @@ section h2 {
   margin-bottom: 0.5em;
 }
 
+section#about-section h2 {
+  display: none;
+}
+
 section article {
-  padding-top: 1em;
-  padding-bottom: 1em;
+  background-color: #f5f7f9;
+  margin-bottom: 1em;
+  padding: 1em;
+  border-left: 2px solid #a3b151;
 }
 
 section .projects h3 {
-  text-transform: uppercase;
   font-size: 1.25em;
   font-weight: bold;
   color: black;
@@ -4622,13 +4627,12 @@ section .projects .tech-used-single-line {
 
 section .projects .link-grid {
   margin-top: 0.5em;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
 }
 
 section .projects .link-grid a {
   cursor: pointer;
+  margin-bottom: 0.25em;
   color: #343a40;
   text-decoration: none;
 }
@@ -4639,70 +4643,104 @@ section .projects .link-grid a i {
 
 section .jobs h3,
 section .skills h3 {
-  text-transform: uppercase;
   font-size: 1.25em;
   font-weight: bold;
   color: black;
+}
+
+section .jobs h5 {
+  margin-bottom: 1.25em;
+  font-size: 0.75em;
 }
 
 section .skills h4 {
   margin-top: 1em;
 }
 
-section .skills {
+section#skills-section {
+  margin-top: 2em;
   margin-bottom: 1em;
   padding-bottom: 1em;
-  border-bottom: 0.5px solid rgba(52, 58, 64, 0.99);
 }
 
-section .skills ul {
+section#skills-section .skill-header {
+  font-weight: bold;
+}
+
+section#skills-section h3 {
+  font-weight: bold;
+  margin-bottom: 1em;
+  font-size: 1.25em;
+}
+
+section#skills-section #skills-columns {
   display: grid;
-  justify-items: center;
+  grid-gap: 1em;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
-section .skills ul li {
-  text-align: center;
-  font-size: 2.5em;
+section#skills-section #skills-columns ul li:first-child {
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
-section .skills ul img {
-  object-fit: cover;
-  width: 35%;
+section#skills-section #skills-columns ul li:not(:first-child) {
+  font-size: 1em;
+  margin-bottom: 0.4em;
 }
 
-section .skills ul img.unity {
-  width: 65%;
+section#skills-section #skills-columns li.package {
+  margin-left: 1em;
 }
 
-section .skills .programming {
+section#skills-section ul {
+  background-color: #f5f7f9;
+  margin-bottom: 1em;
+  padding: 1em;
+  border-left: 2px solid #a3b151;
+}
+
+section#skills-section ul#skills-list {
+  columns: 2;
+}
+
+section#skills-section ul ul {
+  margin-bottom: 1em;
+}
+
+section#skills-section ul ul ul {
+  margin-bottom: 1em;
+}
+
+section#skills-section .programming {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-section .skills .databases {
+section#skills-section .databases {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-section .skills .version-control,
-section .skills .task-automation {
+section#skills-section .version-control,
+section#skills-section .task-automation {
   grid-template-columns: 1fr 1fr;
 }
 
 section h4 {
   font-size: 0.9em;
-  text-transform: uppercase;
   color: black;
-  margin-bottom: 1em;
   line-height: 1.5em;
 }
 
 footer {
+  margin-top: 3em;
   padding: 1em;
   font-size: 0.75em;
 }
 
 .my-name {
   font-size: 3em;
-  margin-top: 1.5em;
+  margin-top: 1em;
   color: black;
 }
 
@@ -4719,9 +4757,11 @@ footer {
 
 .about-grid img {
   width: 50%;
-  border-radius: 20%;
-  padding: 1em;
+  border-radius: 50%;
+  padding-right: 1em;
+  padding-left: 1em;
   margin-bottom: 1em;
+  margin-top: 2em;
 }
 
 .center {
@@ -4740,14 +4780,19 @@ footer {
 
 .social-link {
   text-decoration: none;
-  color: black;
+  color: #838f40;
   font-size: 3em;
   display: inline-block;
+}
+
+.social-link .fab,
+.social-link .fas {
   transition: color 100ms linear;
 }
 
-.social-link:hover {
-  color: rgba(54, 60, 66, 0.76);
+.social-link .fab:hover,
+.social-link .fas:hover {
+  color: #a3b151;
 }
 
 .mobile-burger-container {
@@ -4757,7 +4802,7 @@ footer {
   display: inline-block;
   cursor: pointer;
   z-index: 3;
-  border: 1px solid rgba(52, 58, 64, 0.99);
+  border: 1px solid #838f40;
   padding: 0.25em;
   border-radius: 0.25em;
 }
@@ -4767,7 +4812,7 @@ footer {
 .bar3 {
   width: 35px;
   height: 5px;
-  background-color: rgba(52, 58, 64, 0.99);
+  background-color: #838f40;
   margin: 6px 0;
   transition: 0.4s;
 }
@@ -4794,7 +4839,7 @@ footer {
 .pull-out-mobile-menu {
   top: 0;
   transform: translate(500px, 0);
-  background: rgba(52, 58, 64, 0.99);
+  background: #8e9b45;
 }
 
 .menu {
@@ -4819,10 +4864,8 @@ footer {
 }
 
 .menu li a {
-  color: #f9f9f9 !important;
+  color: #f9f9f9;
   margin-left: 1em;
-  text-transform: uppercase;
-  color: black;
   text-decoration: none;
   font-size: 2em;
 }
@@ -4832,24 +4875,28 @@ footer {
 }
 
 .jobs p {
-  width: 90%;
   margin: 0 auto;
 }
 
-.overflow {
+.jobOverflow,
+.projectOverflow {
   transition: max-height 0.5s, opacity 0.5s linear;
   max-height: 100em;
 }
 
-.overflow,
-.overflow * {
+.jobOverflow,
+.jobOverflow *,
+.projectOverflow,
+.projectOverflow * {
   z-index: 0;
   position: relative;
 }
 
-.overflow.hidden {
+.jobOverflow.hidden,
+.projectOverflow.hidden {
   max-height: 0.1em;
   opacity: 0;
+  display: none;
 }
 
 .overflow-toggle {
@@ -4859,15 +4906,16 @@ footer {
   border-radius: 1em;
   width: 50%;
   text-align: center;
-  background-color: rgba(52, 58, 64, 0.99);
+  background-color: #838f40;
   color: #f9f9f9;
   margin: 0 auto;
   cursor: pointer;
+  margin-bottom: 3em;
   transition: background-color 150ms linear;
 }
 
 .overflow-toggle:hover {
-  background-color: rgba(54, 60, 66, 0.76);
+  background-color: #434921;
 }
 
 .projects .link-grid a {
@@ -4887,6 +4935,15 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 
+  #skills-section #skills-columns {
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    grid-template-rows: 1fr !important;
+  }
+
+  #skills-section #skills-columns ul li:not(:first-child) {
+    font-size: 0.8em !important;
+  }
+
   .projects .tech-used {
     text-align-last: left !important;
   }
@@ -4899,17 +4956,13 @@ footer {
     display: none;
   }
 
-  body main {
-    margin-right: 5em;
-    margin-left: 5em;
-  }
-
-  body main > section {
-    padding-top: 2em;
-  }
-
   nav .menu-button {
     font-size: 1em !important;
+    transition: color 100ms linear;
+  }
+
+  nav .menu-button:hover {
+    color: #a3b151;
   }
 
   .nav-contact {
@@ -4931,11 +4984,12 @@ footer {
 
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "picture contact" "about about";
+    grid-template-columns: 1.5fr 5fr;
+    grid-template-areas: "picture about";
   }
 
   .about-grid img {
+    margin-top: 0em;
     width: 50%;
   }
 
@@ -4948,31 +5002,11 @@ footer {
   }
 
   .about-grid .body-contact {
-    display: block;
-    grid-area: contact;
-    justify-self: center;
-    align-self: center;
-  }
-
-  .about-grid .body-contact ul {
-    grid-template-columns: 0;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
-
-  .about-grid .body-contact ul li {
-    margin-bottom: 1em;
-  }
-
-  .about-grid .body-contact ul li a {
-    font-size: 1.25em;
-  }
-
-  .about-grid .body-contact ul li a i {
-    display: inline;
+    display: none;
   }
 
   .my-name {
-    margin-top: 1.5em;
+    margin-top: 1em;
   }
 
   section h2 {
@@ -4992,15 +5026,15 @@ footer {
   .jobs,
   .skills-grid {
     display: grid;
-    grid-gap: 2.25em;
   }
 
   .projects {
     grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
   }
 
   .jobs {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .skills-grid {
@@ -5048,7 +5082,7 @@ footer {
   }
 
   .menu {
-    background-color: rgba(52, 58, 64, 0.99);
+    background-color: #8e9b45;
     display: grid;
     grid-template-areas: ". links . ";
     position: fixed;
@@ -5078,7 +5112,7 @@ footer {
   .menu .links {
     grid-area: links;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
     width: 75%;
@@ -5089,16 +5123,15 @@ footer {
 @media (min-width: 900px) {
   .about-grid img {
     width: 70%;
-    border-radius: 20%;
   }
 
   .about-grid {
-    grid-template-columns: 1fr 4fr 2fr;
-    grid-template-areas: "picture about contact";
+    grid-template-columns: 1.5fr 5fr;
+    grid-template-areas: "picture about";
   }
 
   .menu .links {
-    width: 100%;
+    width: 55%;
   }
 }
 
@@ -5107,19 +5140,7 @@ footer {
     align-self: baseline;
   }
 
-  .about-grid {
-    grid-template-columns: 1fr 4fr 1.5fr;
-    grid-template-areas: "picture about contact";
-  }
-
   .projects {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media (min-width: 1200px) {
-  body main {
-    margin-right: 10em;
-    margin-left: 10em;
+    grid-template-columns: 1fr 1fr;
   }
 }

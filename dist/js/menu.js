@@ -3,12 +3,16 @@
 (() => {
 
     // To set if touch or click that is being listened to
-    const clickEvent = document.ontouchstart !== null  ? 'click' : 'touchstart';
+    const clickEvent = document.ontouchstart !== null ? 'click' : 'touchstart';
     const mobileMenuBurger = document.querySelector('#mobile-menu-burger');
     const menu = document.querySelector('#menu');
     const menuButtons = document.querySelectorAll('.menu-button');
-    const toggleOverflowButton = document.querySelector('#toggleOverflow');
-    const overflow = document.querySelector('.overflow');
+
+    const toggleProjectOverflowButton = document.querySelector('#toggleProjectOverflow');
+    const projectOverflow = document.querySelector('.projectOverflow');
+
+    const toggleJobOverflowButton = document.querySelector('#toggleJobOverflow');
+    const jobOverflow = document.querySelector('.jobOverflow');
 
     const toggleMobileMenu = () => {
         isMobileMenuOpen = !isMobileMenuOpen;
@@ -16,14 +20,13 @@
         menu.classList.toggle('pull-out-mobile-menu');
     };
 
-    const toggleShowMore = () => {
-        overflow.classList.toggle('hidden');
-        console.log(toggleOverflowButton.textContent);
-        if(toggleOverflowButton.textContent === 'Show More'){
-            toggleOverflowButton.textContent = 'Show Less';
+    const toggleShowMore = (overflowDiv, overflowButton) => {
+        overflowDiv.classList.toggle('hidden');
+        if (overflowButton.textContent === 'Show More') {
+            overflowButton.textContent = 'Show Less';
             return;
         }
-        toggleOverflowButton.textContent = 'Show More';
+        overflowButton.textContent = 'Show More';
     };
 
     let isMobileMenuOpen = false;
@@ -32,8 +35,12 @@
         toggleMobileMenu();
     });
 
-    toggleOverflowButton.addEventListener(clickEvent, () => {
-        toggleShowMore();
+    toggleProjectOverflowButton.addEventListener(clickEvent, () => {
+        toggleShowMore(projectOverflow, toggleProjectOverflowButton);
+    });
+
+    toggleJobOverflowButton.addEventListener(clickEvent, () => {
+        toggleShowMore(jobOverflow, toggleJobOverflowButton);
     });
 
     // Let's menu buttons scroll down to div they are referencing
@@ -43,18 +50,19 @@
             event.preventDefault();
 
             // Remove # from beginning of string
-            const targetDiv = event.target.getAttribute("href").substring(1);
-            if (targetDiv !== null) {
-                document.getElementById(targetDiv).scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start',
-                  },);
+            const targetDivName = event.target.getAttribute("href").substring(1);
+            if (targetDivName !== null) {
+                const element = document.getElementById(targetDivName);
+                const offset = 75;
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = element.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                const offsetPosition = elementPosition - offset;
 
-                //   let currentY = window.scrollY;
-                //   let desktopMenuHeight = 10;
-                  
-                //   // To offset fixed desktop menu
-                //   window.scroll(0, currentY - desktopMenuHeight);
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
             }
         });
     });
@@ -65,5 +73,8 @@
             toggleMobileMenu();
         }
     });
+
+    // Set copyright date to this year
+    document.querySelector('#copyright-date').innerHTML = (new Date()).getFullYear();
 
 })();
